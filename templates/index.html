@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Needlee</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="canonical" href="https://icons.getbootstrap.com/">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous">
+    </script>
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body class="bg-dark">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" name="home" id="navbar-brand-home">
+                <img src="{{ url_for('static', filename='img/logo-no-fill.png') }}" width="77" height="31">
+            </a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a>
+                            <button class="btn btn-link nounderline" name="concept">Concept</button>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a>
+                            <button class="btn btn-link nounderline" name="products">Products</button>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a>
+                            <button class="btn btn-link nounderline" name="faq-and-learning">FAQ & Learning</button>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a>
+                            <button class="btn btn-link nounderline" name="investors">Investors</button>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a>
+                            <button class="btn btn-link nounderline" name="contact">Contact</button>
+                        </a>
+                    </li>
+                </ul>            
+            </div>
+            <button class="btn btn-outline-light btn-lg">Console</button>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="nav-option" id="home" style="display: none;">
+            <h1 class="text-light">Home</h1>
+        </div>
+        <div class="nav-option" id="concept" style="display: inline;">
+            <h1 class="text-light text-center mb-5 mt-5">Can you spot a person here?</h1>
+            <div class="d-flex flex-row mb-5 mt-5 justify-content-center">
+                <img src="{{ url_for('static', filename='img/solution/eye-spot.png') }}" class="rounded img-fluid mb-3">
+            </div>
+            <h1 class="text-light text-center mb-5">Other search & rescue teams also can't</h1>
+            <div class="d-flex flex-row mb-5 mt-5 justify-content-between">
+                <div class="w-25">
+                    <img src="{{ url_for('static', filename='img/solution/problem1.png') }}" class="rounded img-fluid mb-3">
+                    <p class="text-light fs-5 text-center">
+                        More than 90% of Search and Rescue teams use drones in their operations
+                    </p>
+                </div>
+                <div class="w-25">
+                    <img src="{{ url_for('static', filename='img/solution/problem2.png') }}" class="rounded img-fluid mb-3">
+                    <p class="text-light fs-5 text-center">
+                        Manual drones with a First-Person-View are mostly used for such operations
+                    </p>
+                </div>
+                <div class="w-25">
+                    <img src="{{ url_for('static', filename='img/solution/problem3.png') }}" class="rounded img-fluid mb-3">
+                    <p class="text-light fs-5 text-center">
+                        Finding people from above is close to imposible with a human eye
+                    </p>
+                </div>
+            </div>
+            <h1 class="text-light text-center mb-5">Needlee Drone takes rescue missions to the next level</h1>
+            <div class="d-flex flex-row mb-5 mt-5 justify-content-center">
+                <div class="">
+                    <img src="{{ url_for('static', filename='img/solution/needlee-spot.png') }}" class="rounded img-fluid mb-3">
+                </div>
+            </div>
+            <div class="d-flex flex-row mb-5 mt-5 justify-content-between">
+                <div class="w-25">
+                    <img src="{{ url_for('static', filename='img/solution/stage1.png') }}" class="rounded img-fluid mb-3">
+                    <p class="text-light fs-5 text-center">
+                        Needlee is a complite autopilot: just pick a search area with your smartphone and start a flight in a minute
+                    </p>
+                </div>
+                <div class="w-25">
+                    <img src="{{ url_for('static', filename='img/solution/stage2.png') }}" class="rounded img-fluid mb-3">
+                    <p class="text-light fs-5 text-center">
+                        Let Needlee scan the area to detect people, get closer to validate what is detected and make HD pictures
+                    </p>
+                </div>
+                <div class="w-25">
+                    <img src="{{ url_for('static', filename='img/solution/stage3.png') }}" class="rounded img-fluid mb-3">
+                    <p class="text-light fs-5 text-center">
+                        Drone will send validated HD images with GPS coordinates to your app, so the team could reach a person easily
+                    </p>
+                </div>
+            </div>
+            <h1 class="text-light text-center mb-5">Alpha testing</h1>
+            <div class="d-flex flex-row mb-3 justify-content-between">
+                <div style="width: 50%;">
+                    <img src="{{ url_for('static', filename='img/solution/alpha-tests.gif') }}" class="rounded img-fluid mb-3">
+                </div>
+                <div style="width: 45%;">
+                    <p class="text-light fs-3 text-left ml-1">
+                        - Smartphone flight control service
+                    </p>
+                    <p class="text-light fs-3 text-left">
+                        - AI human detection, validation and following
+                    </p>
+                    <p class="text-light fs-3 text-left">
+                        - Live video & geolocation streaming
+                    </p>
+                    <p class="text-light fs-3 text-left">
+                        - Time in air: 40 min
+                    </p>
+                    <p class="text-light fs-3 text-left">
+                        - Flight distance: 7 km
+                    </p>
+                </div>
+            </div>
+            <h1 class="text-light text-center mb-5">Use cases</h1>
+            <div class="d-flex flex-row mb-5 mt-5 justify-content-between">
+                <div class="w-25">
+                    <img src="{{ url_for('static', filename='img/solution/case1.png') }}" class="rounded img-fluid mb-3">
+                    <p class="text-light fs-5 text-center">
+                        Rescue services and teams
+                    </p>
+                </div>
+                <div class="w-25">
+                    <img src="{{ url_for('static', filename='img/solution/case2.png') }}" class="rounded img-fluid mb-3">
+                    <p class="text-light fs-5 text-center">
+                        Maritime Rescue services
+                    </p>
+                </div>
+                <div class="w-25">
+                    <img src="{{ url_for('static', filename='img/solution/case3.png') }}" class="rounded img-fluid mb-3">
+                    <p class="text-light fs-5 text-center">
+                        Border Guard services
+                    </p>
+                </div>
+            </div>
+            <h1 class="text-light text-center mb-5">What's next?</h1>
+            <div class="d-flex flex-row mb-5 mt-5 justify-content-between">
+                <div>
+                    <button class="btn btn-outline-light btn-lg">Needlee V1 overview</button>
+                </div>
+                <div>
+                    <button class="btn btn-outline-light btn-lg">Get Needlee for free!</button>
+                </div>
+                <div>
+                    <button class="btn btn-outline-light btn-lg">Investments & partnership</button>
+                </div>
+                <div>
+                    <button class="btn btn-outline-light btn-lg">Contact us</button>
+                </div>
+            </div>
+        </div>
+        <div class="nav-option" id="products" style="display: none;">
+            <h1 class="text-light">Products</h1>
+        </div>
+        <div class="nav-option" id="faq-and-learning" style="display: none;">
+            <h1 class="text-light">FAQ & Learning</h1>
+        </div>
+        <div class="nav-option" id="investors" style="display: none;">
+            <h1 class="text-light">Investors</h1>
+        </div>
+        <div class="nav-option" id="contact" style="display: none;">
+            <h1 class="text-light">Contact</h1>
+        </div>
+    </div>
+  </body>
+</html>
