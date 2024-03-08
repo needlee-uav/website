@@ -8,6 +8,7 @@ var socket = io.connect(
 socket.on("connect", function () {
   console.log("Connected...!", socket.connected);
   console.log(socket);
+  console.log(socket.socket.transport.name)
   socket.emit("update_sid");
 });
 
