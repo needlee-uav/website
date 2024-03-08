@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Needlee</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='console/style.css') }}" rel="stylesheet">
+    <link rel="canonical" href="https://icons.getbootstrap.com/">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin="">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div id="map">
+      <div style="width: 100%; height: 100%; z-index: 1000; position: absolute;" id="overlay">
+        <div class="camera-holder" style="position: absolute; top: 20px; right: 20px;">
+          <div class='video' id="camera" style="display: none;">
+            <img id="photo" width="320" height="320">
+          </div>
+        </div>
+        <div style="position: absolute; bottom: 1%; left: 2%; transform: translate(-2%, -1%);">
+          <img id="attitude-dir-box" src="{{ url_for('static', filename='console/horizont-box.png') }}">
+        </div>
+        <div id="ready_button_container" style="display: none; position: absolute; bottom: 1%; left: 50%; transform: translate(-50%, -1%);">
+          <button id="ready_button" type="button" onclick="setReady()" class="btn btn-primary">Ready</button>
+        </div>
+        <div class="holder" style="display: flex;">
+          <div style="display: block; margin: 20px;">
+            <h4>
+              <span id="vehicle_id" class="badge rounded-pill text-bg-info">Waiting for connection...</span>
+            </h4>
+            <h4>
+              <div class="dropdown" id="test_mode" style="display: inline">
+                <span style="display: inline" type="button" data-bs-toggle="dropdown" id="test_mode" aria-expanded="false" class="badge rounded-pill text-bg-info"><a id="test_mode_name">Test mode</a></span>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" onclick="setTestMode('Soft takeoff and land no GPS')">Soft takeoff and land no GPS</a></li>
+                  <li><a class="dropdown-item" onclick="setTestMode('Test offboard commands')">Test offboard commands</a></li>
+                  <li><a class="dropdown-item" onclick="setTestMode('Test GPS route navigation')">Test GPS route navigation</a></li>
+                  <li><a class="dropdown-item" onclick="setTestMode('Test emergency')">Test emergency</a></li>
+                  <li><a class="dropdown-item" onclick="setTestMode('Test camera streaming')">Test camera streaming</a></li>
+                  <li><a class="dropdown-item" onclick="setTestMode('Test capturing')">Test capturing</a></li>
+                  <li><a class="dropdown-item" onclick="setTestMode('Test following')">Test following</a></li>
+                </ul>
+              </div>
+            </h4>
+            <div id="params" style="display: none;">
+              <h5><span id="lat_param" class="badge rounded-pill text-bg-secondary">None</span></h5>
+              <h5><span id="lon_param" class="badge rounded-pill text-bg-secondary">None</span></h5>
+              <h5><span id="h_param" class="badge rounded-pill text-bg-secondary">None</span></h5>
+              <h5><span id="alt_param" class="badge rounded-pill text-bg-secondary">None</span></h5>
+            </div>
+          </div>
+          <div style="position: absolute; top: 20px; right: 20px;">
+            <button id="camera_btn" style="display: inline;" type="button" onclick="showHideCamera()" class="btn btn-primary"><i class="bi bi-camera-video"></i></button>
+            <button id="hide_camera_btn" style="display: none;" type="button" onclick="showHideCamera()" class="btn btn-primary"><i class="bi bi-camera-video-off"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='console/ui.js') }}"></script>
+    <script src="{{ url_for('static', filename='console/osm.js') }}"></script>
+    <script src="{{ url_for('static', filename='console/osm.rotatedMarker.js') }}"></script>
+    <script src="{{ url_for('static', filename='console/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='console/gps.js') }}"></script>
+  </body>
+</html>

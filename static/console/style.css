@@ -1,0 +1,52 @@
+.Row {
+    display: table;
+    width: 100%; /*Optional*/
+    table-layout: fixed; /*Optional*/
+    border-spacing: 10px; /*Optional*/
+}
+.Column {
+    display: table-cell;
+}
+#video {
+    transform: rotateY(180deg);
+    -webkit-transform:rotateY(180deg); /* Safari and Chrome */
+    -moz-transform:rotateY(180deg); /* Firefox */
+  }
+  body {
+    padding: 0;
+    margin: 0;
+    color: #dad6d6 !important;
+    background: #f7f7f7;
+    background: -webkit-linear-gradient(to right, #322A2A, #211C1C);
+    background: linear-gradient(to right, #322A2A, #211C1C);
+  }
+
+  html, body, #map {
+    height: 100%;
+    width: 100vw;
+  }
+
+  #map {
+    position: relative;
+    z-index: 10;
+  }
+
+  #overlay {
+    position: absolute;
+    z-index: 1;
+  }
+
+  #attitude-dir-box {
+    border-radius: 29px;
+    background: linear-gradient(
+      #6699FF 0%,
+      #6699FF 50%,
+      #996600 50%,
+      #996600 100%
+    );
+  }
+
+
+h5 {
+  margin-bottom: 4px;
+}

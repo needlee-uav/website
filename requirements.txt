@@ -1,2 +1,11 @@
 Flask
+eventlet
+Flask-socketio
+python-engineio
+python-socketio
+simple-websocket
 gunicorn
+pybase64
+opencv-python
+numpy
+requests
