@@ -5,6 +5,7 @@ var socket = io.connect(
 );
 socket.on("connect", function () {
   console.log("Connected...!", socket.connected);
+  console.log(socket);
   socket.emit("update_sid");
 });
 
