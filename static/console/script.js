@@ -1,4 +1,5 @@
 console.log('Connecting...');
+io.set('transports', ['websocket']);
 var socket = io.connect(
   window.location.protocol + "//" + document.domain + ":" + location.port
 );
