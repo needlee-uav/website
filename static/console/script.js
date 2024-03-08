@@ -1,6 +1,9 @@
 console.log('Connecting...');
 var socket = io.connect(
-  window.location.protocol + "//" + document.domain + ":" + location.port
+  window.location.protocol + "//" + document.domain + ":" + location.port, {
+    upgrade: false,
+    transports: ["websocket"]
+  }
 );
 socket.on("connect", function () {
   console.log("Connected...!", socket.connected);
