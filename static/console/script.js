@@ -5,9 +5,9 @@ var socket = io.connect(
     transports: ["websocket"]
   }
 );
+
 socket.on("connect", function () {
   console.log("Connected...!", socket.connected);
-  console.log(socket);
   socket.emit("update_sid");
 });
 
@@ -66,6 +66,6 @@ function setReady() {
   if (GPS_POINTS != []) {
     route = GPS_POINTS.map(point => point.coords);
   }
-  socket.emit("ready", {"test_mode": MODES.get(test_mode), "home": homeCoords, "route": route});
+  socket.emit("ready", {"test_mode": MODES.get(test_mode), "home": homeCoords, "route": route, "enable_camera": window.document.getElementById("enable-camera").checked});
 }
 
