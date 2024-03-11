@@ -14,6 +14,11 @@ app.config["SECRET_KEY"] = "secret!"
 socketio = SocketIO(app)
 DRONE_IDS = ["UAV-1234"]
 
+DRONES = {
+    "UAV-1234": "1488",
+    "UAV-0001": "1001"
+}
+
 class AppData:
     client = ""
     vehicle = ""
@@ -50,7 +55,7 @@ def ready(data):
 
 @socketio.on("vehicle_sign_in")
 def vehicle_sign_in(data):
-    if data["id"] in DRONE_IDS:
+    if data["id"] in DRONES.keys():
         global appData
         appData.vehicle = request.sid
         appData.id = data["id"]
@@ -76,12 +81,66 @@ def stream(data):
     emit("update_vehicle", {"image": "data:image/jpeg;base64," + frame, "params": data["log"]}, room=appData.client)
     
 @app.route("/")
-def index():
-    return render_template("index.html")
+def home():
+    return render_template("index.html", section="home.html")
+
+@app.route("/faq")
+def faq():
+    return render_template("index.html", section="faq.html")
+
+@app.route("/contact")
+def contact():
+    return render_template("index.html", section="contact.html")
+
+@app.route("/investors")
+def investors():
+    return render_template("index.html", section="investors.html")
+
+@app.route("/products")
+def products():
+    return render_template("index.html", section="products.html")
+
+@app.route("/login", methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        try:
+            if request.form["vehicle_key"] == DRONES[request.form["vehicle_id"]]:
+                return render_template("console.html")
+            else:
+                return render_template("login.html", login_status=False)
+        except:  
+            return render_template("login.html", login_status=False)
+    else:
+        return render_template("login.html", login_status=True)
 
 @app.route("/console")
 def console():
     return render_template("console.html")
+
+
+# def contact():
+#     if request.method == 'POST':
+#         if request.form['submit_button'] == 'Do Something':
+#             pass # do something
+#         elif request.form['submit_button'] == 'Do Something Else':
+#             pass # do something else
+#         else:
+#             pass # unknown
+#     elif request.method == 'GET':
+#         return render_template('contact.html', form=form)
+    
+
+# @app.route('/console-submit', methods = ['POST'])
+# def console_submit():
+#     id = request.form['id']
+#     key = request.form['key']
+#     print(id)
+#     print(key)
+#     valid = True
+#     if valid:
+#         return render_template("console.html")
+#     else:
+#         return False
 
 if __name__ == "__main__":
     socketio.run(app, debug=True, port=8080)

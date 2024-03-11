@@ -1,0 +1,132 @@
+<style type='text/css'>
+    .concept-overlay { position:absolute;  z-index: 4; }
+    #concept-img {
+        z-index: 1;
+        position:absolute; width:100%;
+        -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0)), to(rgba(0,0,0,.4)));
+        mask-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.4));
+    }
+    #crop {
+        z-index: 1;
+        position:absolute; width:100%;
+    }
+</style>
+<script>
+</script>
+<div id="eye-spot-box">
+    <div class="concept-overlay" id="concept-overlay-human">
+        <img src="{{ url_for('static', filename='img/solution/human(1).png') }}" width="100%">
+    </div>
+    <div class="concept-overlay" id="concept-overlay-drone">
+        <img src="{{ url_for('static', filename='img/solution/needlee-image.png') }}" width="100%">
+    </div>
+    <img class=" border-light border-bottom" id="concept-img" src="{{ url_for('static', filename='img/solution/forest-mc.png') }}" width="100%"> 
+    <img id="crop" src="{{ url_for('static', filename='img/solution/eye-spot(7).png') }}" width="100%">   
+</div>
+<script>
+    resizeWindow()
+    window.addEventListener("resize", resizeWindow);
+    function resizeWindow() {
+        document.getElementById("eye-spot-box").style = `margin-bottom: ${Math.round(document.getElementById("concept-img").clientWidth / 2.8 + document.getElementById("nav-menu").clientHeight)}px;`;
+        var drone_offset = Math.round(document.getElementById("concept-img").clientWidth / 26);
+        var drone_width = Math.round(document.getElementById("concept-img").clientWidth / 13 * 6);
+        var human_width = document.getElementById("navbar-container").clientWidth / 5;
+        var crop_offset = human_offset - (human_width * 1.5);
+
+        var img_offset = document.getElementById("nav-menu").clientHeight;
+        var crop_point = [
+            Math.round(document.getElementById("concept-img").clientWidth / 13 * 5),
+            Math.round(document.getElementById("concept-img").clientWidth / 13 * 2)
+        ];
+        var crop_bottom = [
+            Math.round(document.getElementById("concept-img").clientWidth / 13 * 8),
+            Math.round(document.getElementById("concept-img").clientWidth / 13 * 12)
+        ];
+
+        var human_offset_right = document.getElementById("navbar-container").offsetLeft < 20 ? human_width - document.getElementById("console-button").clientWidth - document.getElementById("navbar-container").offsetLeft - 10 : document.getElementById("navbar-container").offsetLeft - 10;
+        var human_offset = [
+            document.getElementById("navbar-container").clientWidth + human_offset_right,
+            Math.round(document.getElementById("nav-menu").clientWidth / 26 + document.getElementById("nav-menu").clientHeight)
+        ]
+        document.getElementById("concept-img").style = `top: ${img_offset}px; position: absolute; z-index: 2;`;
+        document.getElementById("crop").style = `z-index: 3; top: ${img_offset}px; clip-path: polygon(${crop_point[0]}px ${crop_point[1]}px, ${crop_bottom[0]}px 100%, 100% 100%);`;
+        document.getElementById("concept-overlay-human").style = `width: ${human_width}px; transform: translate(-${human_width}px, -0%); left: ${human_offset[0]}px; top: ${human_offset[1]}px;`;
+        document.getElementById("concept-overlay-drone").style = `width: ${drone_width}px; left: ${drone_offset}px; top: ${document.getElementById("nav-menu").clientHeight}px;`;
+    }
+</script>
+<div class="container">
+    <h1 class="text-light mb-3">Needlee AI smart search operations</h1>
+    <p class="text-light fs-5 text-left">
+        More than 90% of search and rescue teams use first-person-view drones in their operations. Finding people from a bird's eye view with the human eye is almost impossible.
+    </p>
+    <p class="text-light fs-5 text-left">
+        A fully autonomous Needlee Drone solves this problem: AI will take over the recognition and validation of people in difficult terrain, reporting detected targets to your web application.
+    </p>           
+    <h2 class="text-light mb-3 mt-5">Workflow</h2>
+    <p class="text-light fs-5 text-left">
+        Needlee is a complex of an AI drone and the Needlee Console: a flight control web application. All the flight data comes to the Console, so even multiple drones could be managed easily with a single operator.  
+    </p>
+    <div class="d-flex flex-row mb-3 mt-5 justify-content-between">
+        <div class="w-25">
+            <img src="{{ url_for('static', filename='img/solution/web-app-1.png') }}" class="rounded img-fluid mb-3">
+            <p class="text-light fs-5 text-center">
+                Needlee is a complete autopilot: just pick a search area with your smartphone and start a flight
+            </p>
+        </div>
+        <div class="w-25">
+            <img src="{{ url_for('static', filename='img/solution/web-app-2.png') }}" class="rounded img-fluid mb-3">
+            <p class="text-light fs-5 text-center">
+                Let Needlee scan the area to detect people, get closer to validate what is detected and make HD pictures
+            </p>
+        </div>
+        <div class="w-25">
+            <img src="{{ url_for('static', filename='img/solution/web-app-3.png') }}" class="rounded img-fluid mb-3">
+            <p class="text-light fs-5 text-center">
+                Drone will send validated HD images with GPS coordinates to your app, so the team could reach a person easily
+            </p>
+        </div>
+    </div>
+    <h2 class="text-light mb-3 mt-3">Use cases</h2>
+    <p class="text-light fs-5 text-left">
+        Needlee is focused on a single task to solve it perfectly: searching and detecting people. 
+        This approach allows the drone to distribute its resources efficiently, outperforming multi-mission UAVs.
+    </p>
+    <p class="text-light fs-5 text-left">
+        An ideal combination of hardware and software for human detection leads a fundamentally new level of search operations such as:
+    </p>
+    <div class="d-flex flex-row mb-5 mt-5 justify-content-between">
+        <div class="w-25">
+            <img src="{{ url_for('static', filename='img/solution/case1.png') }}" class="rounded img-fluid mb-3">
+            <p class="text-light fs-5 text-center">
+                Search & rescue ground missions
+            </p>
+        </div>
+        <div class="w-25">
+            <img src="{{ url_for('static', filename='img/solution/case2.png') }}" class="rounded img-fluid mb-3">
+            <p class="text-light fs-5 text-center">
+                Maritime observing
+            </p>
+        </div>
+        <div class="w-25">
+            <img src="{{ url_for('static', filename='img/solution/case3.png') }}" class="rounded img-fluid mb-3">
+            <p class="text-light fs-5 text-center">
+                Border guarding
+            </p>
+        </div>
+    </div>
+    <h2 class="text-light mb-3">What's next?</h2>
+    <div class="d-flex flex-row mb-5 mt-5 justify-content-between">
+        <div>
+            <button class="btn btn-outline-light btn-lg">Needlee V1 overview</button>
+        </div>
+        <div>
+            <button class="btn btn-outline-light btn-lg">Get Needlee for free!</button>
+        </div>
+        <div>
+            <button class="btn btn-outline-light btn-lg">Investments & partnership</button>
+        </div>
+        <div>
+            <button class="btn btn-outline-light btn-lg">Contact us</button>
+        </div>
+    </div>
+</div>
