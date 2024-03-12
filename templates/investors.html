@@ -1,57 +1,194 @@
-<h1 class="text-light text-center mb-5">Market</h1>
-<div class="d-flex flex-row mb-3 justify-content-between">
-    <div style="width: 50%;">
-        <img src="{{ url_for('static', filename='img/pitch/market.png') }}" class="rounded img-fluid mb-3">
+<style type='text/css'>
+    .concept-overlay { position:absolute;  z-index: 4; }
+    #concept-img {
+        z-index: 1;
+        position:absolute; width:100%;
+        -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0)), to(rgba(0,0,0,.4)));
+        mask-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.4));
+    }
+    #crop {
+        z-index: 1;
+        position:absolute; width:100%;
+    }
+</style>
+<div id="eye-spot-box">
+    <div class="concept-overlay" id="concept-overlay-human">
+        <img src="{{ url_for('static', filename='img/solution/human.png') }}" width="100%">
     </div>
-    <div style="width: 45%;">
-        <p class="text-light fs-3 text-left ml-1">
-            - Autonomous drone market holds more than 40% of the global drone market and grows 25% a year
-        </p>
-        <p class="text-light fs-3 text-left">
-            - Search drone market holds 12% of the global market
-        </p>
-        <p class="text-light fs-3 text-left">
-            - No solution for autonomous search & resque exists
-        </p>
+    <div class="concept-overlay" id="concept-overlay-drone">
+        <img src="{{ url_for('static', filename='img/solution/needlee-image.png') }}" width="100%">
     </div>
+    <img class=" border-light border-bottom" id="concept-img" src="{{ url_for('static', filename='img/solution/forest.png') }}" width="100%"> 
+    <img id="crop" src="{{ url_for('static', filename='img/solution/human-spot.png') }}" width="100%">   
 </div>
-<h1 class="text-light text-center mb-5">Customers</h1>
-<div class="d-flex flex-row mb-5 mt-5 justify-content-around">
-    <div class="w-25">
-        <img src="{{ url_for('static', filename='img/solution/case1.png') }}" class="rounded img-fluid mb-3">
-        <p class="text-light fs-5 text-center">
-            Rescue services and teams
-        </p>
+<script>
+    resizeWindow()
+    window.addEventListener("resize", resizeWindow);
+    function resizeWindow() {
+        document.getElementById("eye-spot-box").style = `margin-bottom: ${Math.round(document.getElementById("concept-img").clientWidth / 3 + document.getElementById("nav-menu").clientHeight)}px;`;
+        var drone_offset = Math.round(document.getElementById("concept-img").clientWidth / 26);
+        var drone_width = Math.round(document.getElementById("concept-img").clientWidth / 13 * 6);
+        var human_width = document.getElementById("navbar-container").clientWidth / 5;
+        var crop_offset = human_offset - (human_width * 1.5);
+
+        var img_offset = document.getElementById("nav-menu").clientHeight;
+        var crop_point = [
+            Math.round(document.getElementById("concept-img").clientWidth / 13 * 5),
+            Math.round(document.getElementById("concept-img").clientWidth / 13 * 2)
+        ];
+        var crop_bottom = [
+            Math.round(document.getElementById("concept-img").clientWidth / 13 * 8),
+            Math.round(document.getElementById("concept-img").clientWidth / 13 * 12)
+        ];
+
+        var human_offset_right = document.getElementById("navbar-container").offsetLeft < 20 ? human_width - document.getElementById("console-button").clientWidth - document.getElementById("navbar-container").offsetLeft - 10 : document.getElementById("navbar-container").offsetLeft - 10;
+        var human_offset = [
+            document.getElementById("navbar-container").clientWidth + human_offset_right,
+            Math.round(document.getElementById("nav-menu").clientWidth / 26 + document.getElementById("nav-menu").clientHeight)
+        ]
+        document.getElementById("concept-img").style = `top: ${img_offset}px; position: absolute; z-index: 2;`;
+        document.getElementById("crop").style = `z-index: 3; top: ${img_offset}px; clip-path: polygon(${crop_point[0]}px ${crop_point[1]}px, ${crop_bottom[0]}px 100%, 100% 100%);`;
+        document.getElementById("concept-overlay-human").style = `width: ${human_width}px; transform: translate(-${human_width}px, -0%); left: ${human_offset[0]}px; top: ${human_offset[1]}px;`;
+        document.getElementById("concept-overlay-drone").style = `width: ${drone_width}px; left: ${drone_offset}px; top: ${document.getElementById("nav-menu").clientHeight}px;`;
+    }
+</script>
+<div class="container">
+    <h1 class="text-light mb-3">Needlee is opened for investments</h1>
+    <p>Autonomous drone market holds more than 40% of the global drone market and grows 25% a year.</p>
+    <p>Search & Rescue drone market holds 12% of the global market, but no solution for an autonomous search exists.</p>
+    <div class="d-flex flex-row mb-5 mt-5 justify-content-between">
+        <div style="width: 40%; position: relative;">
+            <img src="{{ url_for('static', filename='img/pitch/market.png') }}" class="rounded img-fluid">
+            <p style="line-height: 1.2; margin-bottom: 0px; text-align: center; font-size: 25px; position: absolute; left: 50%; top: 18%; transform: translate(-50%, -50%);">$32 billion</p>
+            <p style="line-height: 1.2; margin-bottom: 0px; text-align: center; font-size: 25px; position: absolute; left: 50%; top: 45%; transform: translate(-50%, -50%);">$3.9 billion</p>
+            <p style="line-height: 1.2; max-width: 40%; margin-bottom: 0px; text-align: center; font-size: 25px; position: absolute; left: 50%; top: 75%; transform: translate(-50%, -50%);">$500 million</p>
+        </div>
+        <div style="width: 60%; position: relative;">
+            <hr style="margin: 0px; opacity: 1; width: 20%; border: none; border-top: 2px dotted white; position: absolute; right: 93%; top: 18%; ">
+            <hr style="margin: 0px; opacity: 1; width: 22%; border: none; border-top: 2px dotted white; position: absolute; right: 93%; top: 45%; ">
+            <hr style="margin: 0px; opacity: 1; width: 26%; border: none; border-top: 2px dotted white; position: absolute; right: 93%; top: 75%; ">
+            <p style="line-height: 1.2; margin-bottom: 0px; text-align: left; font-size: 25px; position: absolute; left: 10%; top: 18%; transform: translate(-10%, -50%);">TAM</p>
+            <p style="line-height: 1.2; margin-bottom: 0px; text-align: left; font-size: 25px; position: absolute; left: 10%; top: 45%; transform: translate(-10%, -50%);">SAM</p>
+            <p style="line-height: 1.2; margin-bottom: 0px; text-align: left; font-size: 25px; position: absolute; left: 10%; top: 75%; transform: translate(-10%, -50%);">SOM</p>
+            <p style="line-height: 1.2; margin-bottom: 0px; text-align: left; font-size: 25px; position: absolute; left: 25%; top: 18%; transform: translate(0%, -50%);">Global drone market by 2024</p>
+            <p style="line-height: 1.2; margin-bottom: 0px; text-align: left; font-size: 25px; position: absolute; left: 25%; top: 45%; transform: translate(0%, -50%);">Search & Rescue drone market where 95% of sales made with basic FPV drones</p>
+            <p style="line-height: 1.2; margin-bottom: 0px; text-align: left; font-size: 25px; position: absolute; left: 25%; top: 75%; transform: translate(0%, -50%);">Annual drone budget of rescue teams in EU searching for a smart UAV solution</p>
+        </div>
     </div>
-    <div class="w-25">
-        <img src="{{ url_for('static', filename='img/solution/case2.png') }}" class="rounded img-fluid mb-3">
-        <p class="text-light fs-5 text-center">
-            Maritime Rescue services
-        </p>
+    
+    <h2 class="text-light mb-3">Roadmap</h2>
+    <div style="position: relative; height: 550px;">
+        
+        <hr style="height: 5px; background: linear-gradient(to right, #A25252, #C19D9D); opacity: 1; margin: 0px; width: 100%; position: absolute; right: 0%; top: 50%; transform: translate(-0%, -50%);">
+      
+        <div style="background-color: white; border-radius: 100%; width: 30px; height: 30px; position: absolute; left: 5%; top: 50%; transform: translate(-50%, -50%);">
+            <div style="border-left: 6px dotted white; width: 1px; height: 110px; position: absolute; left: 12px; top: -110px;"></div>
+            <div style="background-color: white; border-radius: 100%; width: 15px; height: 15px; position: absolute; left: 50%; top: -120px; transform: translate(-50%, -50%);"></div>
+            <div style="width: 60px; position: absolute; left: 50%; top: -180px; transform: translate(-50%, -50%);">
+                <img src="{{ url_for('static', filename='img/pitch/roadmap-marker.svg') }}" class="rounded img-fluid">
+                <p style="font-size: 30px; color: #333; position: absolute; text-align: center; left: 50%; top: 40%; transform: translate(-50%, -50%);">Q1</p>
+                <p style="line-height: 1.2; margin-bottom: 0px; width: 170px; font-size: 30px; color: white; position: absolute; text-align: left; left: 280%; top: 40%; transform: translate(-50%, -50%);">Needlee V1 prototype</p>
+            </div>
+        </div>
+
+        <div style="background-color: white; border-radius: 100%; width: 30px; height: 30px; position: absolute; left: 18%; top: 50%; transform: translate(-50%, -50%);">
+            <div style="border-left: 6px dotted white; width: 1px; height: 110px; position: absolute; left: 12px; top: 30px;"></div>
+            <div style="background-color: white; border-radius: 100%; width: 15px; height: 15px; position: absolute; left: 50%; top: 150px; transform: translate(-50%, -50%);"></div>
+            <div style="width: 60px; position: absolute; left: 50%; top: 210px; transform: rotate(180deg) translate(50%, 50%); ">
+                <img src="{{ url_for('static', filename='img/pitch/roadmap-marker.svg') }}" class="rounded img-fluid">
+                <p style="font-size: 30px; color: #333; position: absolute; text-align: center; left: 50%; top: 40%; transform: rotate(180deg) translate(50%, 50%);">Q2</p>
+                <p style="line-height: 1.2; margin-bottom: 0px; width: 170px; font-size: 30px; color: white; position: absolute; text-align: left; left: -180%; top: 40%; transform: rotate(180deg) translate(50%, 50%);">Alpha testing</p>
+            </div>
+        </div>
+
+        <div style="background-color: white; border-radius: 100%; width: 30px; height: 30px; position: absolute; left: 31%; top: 50%; transform: translate(-50%, -50%);">
+            <div style="border-left: 6px dotted white; width: 1px; height: 110px; position: absolute; left: 12px; top: -110px;"></div>
+            <div style="background-color: white; border-radius: 100%; width: 15px; height: 15px; position: absolute; left: 50%; top: -120px; transform: translate(-50%, -50%);"></div>
+            <div style="width: 60px; position: absolute; left: 50%; top: -180px; transform: translate(-50%, -50%);">
+                <img src="{{ url_for('static', filename='img/pitch/roadmap-marker.svg') }}" class="rounded img-fluid">
+                <p style="font-size: 30px; color: #333; position: absolute; text-align: center; left: 50%; top: 40%; transform: translate(-50%, -50%);">Q3</p>
+                <p style="line-height: 1.2; margin-bottom: 0px; width: 150px; font-size: 30px; color: white; position: absolute; text-align: left; left: 260%; top: 40%; transform: translate(-50%, -50%);">Beta testing</p>
+            </div>
+        </div>
+
+        <div style="background-color: white; border-radius: 100%; width: 30px; height: 30px; position: absolute; left: 44%; top: 50%; transform: translate(-50%, -50%);">
+            <div style="border-left: 6px dotted white; width: 1px; height: 110px; position: absolute; left: 12px; top: 30px;"></div>
+            <div style="background-color: white; border-radius: 100%; width: 15px; height: 15px; position: absolute; left: 50%; top: 150px; transform: translate(-50%, -50%);"></div>
+            <div style="width: 60px; position: absolute; left: 50%; top: 210px; transform: rotate(180deg) translate(50%, 50%); ">
+                <img src="{{ url_for('static', filename='img/pitch/roadmap-marker.svg') }}" class="rounded img-fluid">
+                <p style="font-size: 30px; color: #333; position: absolute; text-align: center; left: 50%; top: 40%; transform: rotate(180deg) translate(50%, 50%);">Q4</p>
+                <p style="line-height: 1.2; margin-bottom: 0px; width: 170px; font-size: 30px; color: white; position: absolute; text-align: left; left: -180%; top: 40%; transform: rotate(180deg) translate(50%, 50%);">Test focus group</p>
+            </div>
+        </div>
+        
+        <div style="background-color: white; border-radius: 100%; width: 30px; height: 30px; position: absolute; left: 57%; top: 50%; transform: translate(-50%, -50%);">
+            <div style="border-left: 6px dotted white; width: 1px; height: 110px; position: absolute; left: 12px; top: -110px;"></div>
+            <div style="background-color: white; border-radius: 100%; width: 15px; height: 15px; position: absolute; left: 50%; top: -120px; transform: translate(-50%, -50%);"></div>
+            <div style="width: 60px; position: absolute; left: 50%; top: -180px; transform: translate(-50%, -50%);">
+                <img src="{{ url_for('static', filename='img/pitch/roadmap-marker.svg') }}" class="rounded img-fluid">
+                <p style="font-size: 30px; color: #333; position: absolute; text-align: center; left: 50%; top: 40%; transform: translate(-50%, -50%);">Q1</p>
+                <p style="line-height: 1.2; margin-bottom: 0px; width: 170px; font-size: 30px; color: white; position: absolute; text-align: left; left: 280%; top: 40%; transform: translate(-50%, -50%);">First customers</p>
+            </div>
+        </div>
+
+        <div style="background-color: white; border-radius: 100%; width: 30px; height: 30px; position: absolute; left: 70%; top: 50%; transform: translate(-50%, -50%);">
+            <div style="border-left: 6px dotted white; width: 1px; height: 110px; position: absolute; left: 12px; top: 30px;"></div>
+            <div style="background-color: white; border-radius: 100%; width: 15px; height: 15px; position: absolute; left: 50%; top: 150px; transform: translate(-50%, -50%);"></div>
+            <div style="width: 60px; position: absolute; left: 50%; top: 210px; transform: rotate(180deg) translate(50%, 50%); ">
+                <img src="{{ url_for('static', filename='img/pitch/roadmap-marker.svg') }}" class="rounded img-fluid">
+                <p style="font-size: 30px; color: #333; position: absolute; text-align: center; left: 50%; top: 40%; transform: rotate(180deg) translate(50%, 50%);">Q4</p>
+                <p style="line-height: 1.2; margin-bottom: 0px; width: 220px; font-size: 30px; color: white; position: absolute; text-align: left; left: -220%; top: 40%; transform: rotate(180deg) translate(50%, 50%);">50 Needlee V1 items sold</p>
+            </div>
+        </div>
+
+        <div style="background-color: white; border-radius: 100%; width: 30px; height: 30px; position: absolute; left: 83%; top: 50%; transform: translate(-50%, -50%);">
+            <div style="border-left: 6px dotted white; width: 1px; height: 110px; position: absolute; left: 12px; top: -110px;"></div>
+            <div style="background-color: white; border-radius: 100%; width: 15px; height: 15px; position: absolute; left: 50%; top: -120px; transform: translate(-50%, -50%);"></div>
+            <div style="width: 60px; position: absolute; left: 50%; top: -180px; transform: translate(-50%, -50%);">
+                <img src="{{ url_for('static', filename='img/pitch/roadmap-marker.svg') }}" class="rounded img-fluid">
+                <p style="font-size: 30px; color: #333; position: absolute; text-align: center; left: 50%; top: 40%; transform: translate(-50%, -50%);">Q1</p>
+                <p style="line-height: 1.2; margin-bottom: 0px; width: 170px; font-size: 30px; color: white; position: absolute; text-align: left; left: 280%; top: 40%; transform: translate(-50%, -50%);">Needlee V2 prototype</p>
+            </div>
+        </div>
+
     </div>
-    <div class="w-25">
-        <img src="{{ url_for('static', filename='img/solution/case3.png') }}" class="rounded img-fluid mb-3">
-        <p class="text-light fs-5 text-center">
-            Border Guard services
-        </p>
+
+    <p class="mt-2">Autonomous drone market holds more than 40% of the global drone market and grows 25% a year Autonomous drone market holds more than 40% of the global drone market and grows 25% a year Autonomous drone market holds more than 40% of the global drone market and grows 25% a year</p>
+
+    <h2 class="text-light mb-5 mt-5">Customers</h2>
+    <div class="d-flex flex-row mb-5 mt-5 justify-content-between">
+        <div class="w-25">
+            <img src="{{ url_for('static', filename='img/solution/case1.png') }}" class="rounded img-fluid mb-3">
+            <p class="text-light fs-5 text-center">
+                Rescue services and teams
+            </p>
+        </div>
+        <div class="w-25">
+            <img src="{{ url_for('static', filename='img/solution/case2.png') }}" class="rounded img-fluid mb-3">
+            <p class="text-light fs-5 text-center">
+                Maritime Rescue services
+            </p>
+        </div>
+        <div class="w-25">
+            <img src="{{ url_for('static', filename='img/solution/case3.png') }}" class="rounded img-fluid mb-3">
+            <p class="text-light fs-5 text-center">
+                Border Guard services
+            </p>
+        </div>
     </div>
-</div>
-<h1 class="text-light text-center mb-5 mt-5">Customer survey</h1>
-<div class="d-flex flex-row mb-5 mt-5 justify-content-center">
-    <img src="{{ url_for('static', filename='img/pitch/survey.png') }}" class="rounded img-fluid mb-3">
-</div>
-<p class="text-light fs-3 text-left">
-    - Search drone market holds 12% of the global market
-</p>
-<h1 class="text-light text-center mb-5 mt-5">Competition</h1>
-<div class="d-flex flex-row mb-5 mt-5 justify-content-center">
-    <img src="{{ url_for('static', filename='img/pitch/competition.png') }}" class="rounded img-fluid mb-3">
-</div>
-<h1 class="text-light text-center mb-5 mt-5">Strategy: sales through surveys</h1>
-<div class="d-flex flex-row mb-5 mt-5 justify-content-center">
-    <img src="{{ url_for('static', filename='img/pitch/sales-strategy.png') }}" class="rounded img-fluid mb-3">
-</div>
-<h1 class="text-light text-center mb-5 mt-5">Road map</h1>
-<div class="d-flex flex-row mb-5 mt-5 justify-content-center">
-    <img src="{{ url_for('static', filename='img/pitch/road-map.png') }}" class="rounded img-fluid mb-3">
+    <h2 class="text-light mb-5 mt-5">Customer survey</h2>
+    <div class="d-flex flex-row mb-5 mt-5 justify-content-center">
+        <img src="{{ url_for('static', filename='img/pitch/survey.png') }}" class="rounded img-fluid mb-3">
+    </div>
+    <p class="text-light fs-3 text-left">
+        - Search drone market holds 12% of the global market
+    </p>
+    <h1 class="text-light text-center mb-5 mt-5">Competition</h1>
+    <div class="d-flex flex-row mb-5 mt-5 justify-content-center">
+        <img src="{{ url_for('static', filename='img/pitch/competition.png') }}" class="rounded img-fluid mb-3">
+    </div>
+    <h1 class="text-light text-center mb-5 mt-5">Strategy: sales through surveys</h1>
+    <div class="d-flex flex-row mb-5 mt-5 justify-content-center">
+        <img src="{{ url_for('static', filename='img/pitch/sales-strategy.png') }}" class="rounded img-fluid mb-3">
+    </div>
 </div>
