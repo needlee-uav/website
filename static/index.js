@@ -7,31 +7,56 @@ window.mobileCheck = function() {
 const mobile = window.mobileCheck();
 
 resizeWindow()
-    window.addEventListener("resize", resizeWindow);
-    function resizeWindow() {
-        document.getElementById("eye-spot-box").style = `margin-bottom: ${Math.round(document.getElementById("concept-img").clientWidth / 3 + document.getElementById("nav-menu").clientHeight)}px;`;
-        var drone_offset = Math.round(document.getElementById("concept-img").clientWidth / 26);
-        var drone_width = Math.round(document.getElementById("concept-img").clientWidth / 13 * 6);
-        var human_width = document.getElementById("navbar-container").clientWidth / 5;
-        var crop_offset = human_offset - (human_width * 1.5);
+resizeContent()
+window.addEventListener("resize", resizeContent);
+window.addEventListener("resize", resizeWindow);
 
-        var img_offset = document.getElementById("nav-menu").clientHeight;
-        var crop_point = [
-            Math.round(document.getElementById("concept-img").clientWidth / 13 * 5),
-            Math.round(document.getElementById("concept-img").clientWidth / 13 * 2)
-        ];
-        var crop_bottom = [
-            Math.round(document.getElementById("concept-img").clientWidth / 13 * 8),
-            Math.round(document.getElementById("concept-img").clientWidth / 13 * 12)
-        ];
 
-        var human_offset_right = document.getElementById("navbar-container").offsetLeft < 20 ? human_width - document.getElementById("console-button").clientWidth - document.getElementById("navbar-container").offsetLeft - 10 : document.getElementById("navbar-container").offsetLeft - 10;
-        var human_offset = [
-            document.getElementById("navbar-container").clientWidth + human_offset_right,
-            Math.round(document.getElementById("nav-menu").clientWidth / 26 + document.getElementById("nav-menu").clientHeight)
-        ]
-        document.getElementById("concept-img").style = `top: ${img_offset}px; position: absolute; z-index: 2;`;
-        document.getElementById("crop").style = `z-index: 3; top: ${img_offset}px; clip-path: polygon(${crop_point[0]}px ${crop_point[1]}px, ${crop_bottom[0]}px 100%, 100% 100%);`;
-        document.getElementById("concept-overlay-human").style = `width: ${human_width}px; transform: translate(-${human_width}px, -0%); left: ${human_offset[0]}px; top: ${human_offset[1]}px;`;
-        document.getElementById("concept-overlay-drone").style = `width: ${drone_width}px; left: ${drone_offset}px; top: ${document.getElementById("nav-menu").clientHeight}px;`;
+function resizeFonts(class_id, size) {
+    try {
+        var elements = document.getElementsByClassName(class_id);
+        for (var i = 0; i < elements.length; i++) {
+            var element = elements[i];
+            element.style.fontSize = `${size}px`;
+        }
+    } catch {}
+}
+
+function resizeContent() {
+    if (document.getElementById("content-container").clientWidth <= 720) {
+        resizeFonts('standart-p', 14)
+        resizeFonts('large-p', 18)
+    } else {
+        resizeFonts('standart-p', 18)
+        resizeFonts('large-p', 24)
     }
+}
+
+function resizeWindow() {
+    if (!document.getElementById("eye-spot-box")) { return }
+    document.getElementById("eye-spot-box").style = `margin-bottom: ${Math.round(document.getElementById("concept-img").clientWidth / 3 + document.getElementById("nav-menu").clientHeight)}px;`;
+    var drone_offset = Math.round(document.getElementById("concept-img").clientWidth / 26);
+    var drone_width = Math.round(document.getElementById("concept-img").clientWidth / 13 * 6);
+    var human_width = document.getElementById("navbar-container").clientWidth / 5;
+    var crop_offset = human_offset - (human_width * 1.5);
+
+    var img_offset = document.getElementById("nav-menu").clientHeight;
+    var crop_point = [
+        Math.round(document.getElementById("concept-img").clientWidth / 13 * 5),
+        Math.round(document.getElementById("concept-img").clientWidth / 13 * 2)
+    ];
+    var crop_bottom = [
+        Math.round(document.getElementById("concept-img").clientWidth / 13 * 8),
+        Math.round(document.getElementById("concept-img").clientWidth / 13 * 12)
+    ];
+
+    var human_offset_right = document.getElementById("navbar-container").offsetLeft < 20 ? human_width - document.getElementById("console-button").clientWidth - document.getElementById("navbar-container").offsetLeft - 10 : document.getElementById("navbar-container").offsetLeft - 10;
+    var human_offset = [
+        document.getElementById("navbar-container").clientWidth + human_offset_right,
+        Math.round(document.getElementById("nav-menu").clientWidth / 26 + document.getElementById("nav-menu").clientHeight)
+    ]
+    document.getElementById("concept-img").style = `top: ${img_offset}px; position: absolute; z-index: 2;`;
+    document.getElementById("crop").style = `z-index: 3; top: ${img_offset}px; clip-path: polygon(${crop_point[0]}px ${crop_point[1]}px, ${crop_bottom[0]}px 100%, 100% 100%);`;
+    document.getElementById("concept-overlay-human").style = `width: ${human_width}px; transform: translate(-${human_width}px, -0%); left: ${human_offset[0]}px; top: ${human_offset[1]}px;`;
+    document.getElementById("concept-overlay-drone").style = `width: ${drone_width}px; left: ${drone_offset}px; top: ${document.getElementById("nav-menu").clientHeight}px;`;
+}

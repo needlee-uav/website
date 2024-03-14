@@ -1,18 +1,3 @@
-<style type='text/css'>
-    .concept-overlay { position:absolute;  z-index: 4; }
-    #concept-img {
-        z-index: 1;
-        position:absolute; width:100%;
-        -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0)), to(rgba(0,0,0,.4)));
-        mask-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.4));
-    }
-    #crop {
-        z-index: 1;
-        position:absolute; width:100%;
-    }
-</style>
-<script>
-</script>
 <div id="eye-spot-box">
     <div class="concept-overlay" id="concept-overlay-human">
         <img src="{{ url_for('static', filename='img/solution/human.png') }}" width="100%">
@@ -23,131 +8,117 @@
     <img class=" border-light border-bottom" id="concept-img" src="{{ url_for('static', filename='img/solution/forest.png') }}" width="100%"> 
     <img id="crop" src="{{ url_for('static', filename='img/solution/human-spot.png') }}" width="100%">   
 </div>
-<script>
-    resizeWindow()
-    window.addEventListener("resize", resizeWindow);
-    function resizeWindow() {
-        document.getElementById("eye-spot-box").style = `margin-bottom: ${Math.round(document.getElementById("concept-img").clientWidth / 3 + document.getElementById("nav-menu").clientHeight)}px;`;
-        var drone_offset = Math.round(document.getElementById("concept-img").clientWidth / 26);
-        var drone_width = Math.round(document.getElementById("concept-img").clientWidth / 13 * 6);
-        var human_width = document.getElementById("navbar-container").clientWidth / 5;
-        var crop_offset = human_offset - (human_width * 1.5);
 
-        var img_offset = document.getElementById("nav-menu").clientHeight;
-        var crop_point = [
-            Math.round(document.getElementById("concept-img").clientWidth / 13 * 5),
-            Math.round(document.getElementById("concept-img").clientWidth / 13 * 2)
-        ];
-        var crop_bottom = [
-            Math.round(document.getElementById("concept-img").clientWidth / 13 * 8),
-            Math.round(document.getElementById("concept-img").clientWidth / 13 * 12)
-        ];
-
-        var human_offset_right = document.getElementById("navbar-container").offsetLeft < 20 ? human_width - document.getElementById("console-button").clientWidth - document.getElementById("navbar-container").offsetLeft - 10 : document.getElementById("navbar-container").offsetLeft - 10;
-        var human_offset = [
-            document.getElementById("navbar-container").clientWidth + human_offset_right,
-            Math.round(document.getElementById("nav-menu").clientWidth / 26 + document.getElementById("nav-menu").clientHeight)
-        ]
-        document.getElementById("concept-img").style = `top: ${img_offset}px; position: absolute; z-index: 2;`;
-        document.getElementById("crop").style = `z-index: 3; top: ${img_offset}px; clip-path: polygon(${crop_point[0]}px ${crop_point[1]}px, ${crop_bottom[0]}px 100%, 100% 100%);`;
-        document.getElementById("concept-overlay-human").style = `width: ${human_width}px; transform: translate(-${human_width}px, -0%); left: ${human_offset[0]}px; top: ${human_offset[1]}px;`;
-        document.getElementById("concept-overlay-drone").style = `width: ${drone_width}px; left: ${drone_offset}px; top: ${document.getElementById("nav-menu").clientHeight}px;`;
-    }
-</script>
-<div class="container">
+<div class="container" id="content-container">
     <h1 class="text-light mb-3">Needlee AI: smart search operations</h1>
-    <p>More than 90% of search and rescue teams use first-person-view drones in their operations. Finding people from a bird's eye view with the human eye is almost impossible.</p>
-    <p>A fully autonomous Needlee Drone solves this problem: AI will take over the recognition and validation of people in difficult terrain, reporting detected targets to your web application.</p>           
+    <p class="standart-p">More than 90% of search and rescue teams use first-person-view drones in their operations. Finding people from a bird's eye view with the human eye is almost impossible.</p>
+    <p class="standart-p">A fully autonomous Needlee Drone solves this problem: AI will take over the recognition and validation of people in difficult terrain, reporting detected targets to your web application.</p>           
     <h2 class="text-light mb-3 mt-5">Workflow</h2>
-    <p>Needlee complex includes an AI drone (or a group of drones) and the Needlee Console: a flight control web application.</p>
-    <p>All the flight data comes to the Console, so even multiple drones could be managed easily with a single operator.</p>
+    <p class="standart-p">Needlee complex includes an AI drone (or a group of drones) and the Needlee Console: a flight control web application.</p>
+    <p class="standart-p">All the flight data comes to the Console, so even multiple drones could be managed easily with a single operator.</p>
     <div class="d-flex flex-row mb-3 mt-5 justify-content-between">
         <div class="card-25">
             <img src="{{ url_for('static', filename='img/solution/web-app-1.png') }}" class="rounded img-fluid mb-3">
             <div style="border-radius: 15px; border: 1px solid #4e4e4e; padding: 10px 20px;">
-                <p style="margin: 0px; color: white">Pick a search area with your smartphone, Needlee will start an autonomous flight.</p>
+                <p  class="standart-p" style="margin: 0px;">Pick the search area with a smartphone, Needlee will start an autonomous flight.</p>
             </div>
         </div>
         <div class="card-25">
             <img src="{{ url_for('static', filename='img/solution/web-app-2.png') }}" class="rounded img-fluid mb-3">
             <div style="border-radius: 15px; border: 1px solid #4e4e4e; padding: 10px 20px;">
-                <p style="margin: 0px; color: white">Watch live stream video while Needlee scans the area to detect people.</p>
+                <p class="standart-p" style="margin: 0px;">Watch live stream video while Needlee scans the area to detect people.</p>
             </div>
         </div>
         <div class="card-25">
             <img src="{{ url_for('static', filename='img/solution/web-app-3.png') }}" class="rounded img-fluid mb-3">
             <div style="border-radius: 15px; border: 1px solid #4e4e4e; padding: 10px 20px;">
-                <p style="margin: 0px; color: white">Recieve HD images of search targets and send team to validated GPS coordinates.</p>
+                <p class="standart-p" style="margin: 0px;">Recieve HD images of search targets and send team to validated GPS coordinates.</p>
             </div>
         </div>
     </div>
     
     <h2 class="text-light mb-3 mt-5">Use cases</h2>
-    <p>
+    <p class="standart-p">
         Needlee is focused on a single task to solve it perfectly: searching and detecting people. 
         This approach allows the drone to distribute its resources efficiently, outperforming multi-mission UAVs.
     </p>
-    <p>An ideal combination of hardware and software for human detection leads a fundamentally new level of search operations such as:</p>
+    <p class="standart-p">An ideal combination of hardware and software for human detection leads a fundamentally new level of search operations such as:</p>
     <div class="d-flex flex-row mb-5 mt-5 justify-content-between">
         <div class="card-25">
             <img src="{{ url_for('static', filename='img/solution/case1.png') }}" class="rounded img-fluid mb-3">
-            <p class="text-center">
-                Search & rescue ground missions
+            <p class="standart-p text-center">
+                Ground rescue missions
             </p>
         </div>
         <div class="card-25">
             <img src="{{ url_for('static', filename='img/solution/case2.png') }}" class="rounded img-fluid mb-3">
-            <p class="text-center">
+            <p class="standart-p text-center">
                 Maritime observing
             </p>
         </div>
         <div class="card-25">
             <img src="{{ url_for('static', filename='img/solution/case3.png') }}" class="rounded img-fluid mb-3">
-            <p class="text-center">
+            <p class="standart-p text-center">
                 Border guarding
             </p>
         </div>
     </div>
+    <style>
+        .double-group-container {
+            width: 100%;
+            margin-bottom: 20px;
+            height: auto;
+        }
+        .double-group-element {
+            width: 47%; 
+            margin-left: 3%;
+            margin-bottom: 20px;
+            float: left;
+            align-items: center;
+            display: flex;
+            @media (max-width:520px) {
+                width: 100%;
+            }
+        }
+    </style>
 
-    <h2 class="text-light mb-5 mt-5">Key features</h2>
-    <div class="d-flex mb-2 justify-content-between">
-        <div>
-            <div class="d-flex mb-3 justify-content-left align-items-center">
-                <img style="margin-right: 20px;" height="60px" width="60px" src="{{ url_for('static', filename='img/solution/autopilot-icon.svg') }}">
-                <p style="margin-bottom: 0px;">Full autopilot with AI human detection</p>
-            </div>
-            <div class="d-flex mb-3 justify-content-left align-items-center">
-                <img style="margin-right: 20px;" height="60px" width="60px" src="{{ url_for('static', filename='img/solution/app-icon.svg') }}">
-                <p style="margin-bottom: 0px;">PC and smartphone user-friendly flight control app</p>
-            </div>
-            <div class="d-flex mb-3 justify-content-left align-items-center">
-                <img style="margin-right: 20px;" height="60px" width="60px" src="{{ url_for('static', filename='img/solution/manual-control-icon.svg') }}">
-                <p style="margin-bottom: 0px;">Smart manual control mode</p>
-            </div>
-            <div class="d-flex mb-3 justify-content-left align-items-center">
-                <img style="margin-right: 20px;" height="60px" width="60px" src="{{ url_for('static', filename='img/solution/4g-icon.svg') }}">
-                <p style="margin-bottom: 0px;">4G onboard internet</p>
-            </div>
+    <h2 class="text-light mb-4 mt-5">Key features</h2>
+
+    <div class="double-group-container">
+        <div class="double-group-element">
+            <img class="icon-60" src="{{ url_for('static', filename='img/solution/autopilot-icon.svg') }}">
+            <p class="standart-p" style="margin-bottom: 0px;">Full autopilot with AI human detection</p>
         </div>
-        <div>
-            <div class="d-flex mb-3 justify-content-left align-items-center">
-                <img style="margin-right: 20px;" height="60px" width="60px" src="{{ url_for('static', filename='img/solution/stream-icon.svg') }}">
-                <p style="margin-bottom: 0px;">Live HD video stream with low-light features</p>
-            </div>
-            <div class="d-flex mb-3 justify-content-left align-items-center">
-                <img style="margin-right: 20px;" height="60px" width="60px" src="{{ url_for('static', filename='img/solution/optional-features-icon.svg') }}">
-                <p style="margin-bottom: 0px;">Optional LIDAR and thermovision features</p>
-            </div>
-            <div class="d-flex mb-3 justify-content-left align-items-center">
-                <img style="margin-right: 20px;" height="60px" width="60px" src="{{ url_for('static', filename='img/solution/radio-icon.svg') }}">
-                <p style="margin-bottom: 0px;">Optional radio control</p>
-            </div>
-            <div class="d-flex justify-content-left align-items-center">
-                <img style="margin-right: 20px;" height="60px" width="60px" src="{{ url_for('static', filename='img/solution/sos-icon.svg') }}">
-                <p style="margin-bottom: 0px;">Emergency GPS signal</p>
-            </div>
+        <div class="double-group-element">
+            <img class="icon-60" src="{{ url_for('static', filename='img/solution/app-icon.svg') }}">
+            <p class="standart-p" style="margin-bottom: 0px;">PC and smartphone user-friendly flight control</p>
+        </div>
+        <div class="double-group-element">
+            <img class="icon-60" src="{{ url_for('static', filename='img/solution/stream-icon.svg') }}">
+            <p class="standart-p" style="margin-bottom: 0px;">Live HD video stream, low-light features</p>
+        </div>
+        <div class="double-group-element">
+            <img class="icon-60" src="{{ url_for('static', filename='img/solution/optional-features-icon.svg') }}">
+            <p class="standart-p" style="margin-bottom: 0px;">Optional LIDAR and thermovision features</p>
+        </div>
+        <div class="double-group-element">
+            <img class="icon-60" src="{{ url_for('static', filename='img/solution/radio-icon.svg') }}">
+            <p class="standart-p" style="margin-bottom: 0px;">Optional radio control</p>
+        </div>
+        <div class="double-group-element">
+            <img class="icon-60" src="{{ url_for('static', filename='img/solution/4g-icon.svg') }}">
+            <p class="standart-p" style="margin-bottom: 0px;">4G onboard internet</p>
+        </div>
+        <div class="double-group-element">
+            <img class="icon-60" src="{{ url_for('static', filename='img/solution/manual-control-icon.svg') }}">
+            <p class="standart-p" style="margin-bottom: 0px;">Smart manual control mode</p>
+        </div>
+        <div class="double-group-element">
+            <img class="icon-60" src="{{ url_for('static', filename='img/solution/sos-icon.svg') }}">
+            <p class="standart-p" style="margin-bottom: 0px;">Emergency GPS signal</p>
         </div>
     </div>
+
 
     <h2 class="text-light mb-3 mt-5">What's next?</h2>
     <div class="d-flex flex-row mb-5 mt-5 justify-content-between">
