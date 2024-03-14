@@ -43,50 +43,56 @@
     </ul>
     
     <h2 class="text-light mb-4 mt-5">Competition</h2>
-    <table class="table table-bordered table-dark" style="font-size: 20px; table-layout: fixed; text-align: center; vertical-align: middle;">
-        <tbody>
-            <th scope="row" ></th>
+    <table class="table table-bordered table-dark" style="table-layout: fixed; text-align: center; vertical-align: middle;">
+        <colgroup>
+            <col style="width: 10px;"/>
+            <col/>
+            <col/>
+            <col/>
+          </colgroup>
+            <tr>
+                <th colspan="2" scope="row"></th>
                 <th><img src="{{ url_for('static', filename='img/needlee-v1-logo.svg') }}" class="rounded img-fluid"></th>
                 <th><p style="font-weight: 400; margin-bottom: 0px;" class="standart-p">Multitask autopilot drones</p></th>
                 <th><p style="font-weight: 400; margin-bottom: 0px;" class="standart-p">Rescue FPV drones</p></th>
                 <th><p style="font-weight: 400; margin-bottom: 0px;" class="standart-p">Multitask FPV drones</p></th>
             </tr>
-          <tr>
-            <th scope="row" style="height: 60px; text-align: end; padding-right: 15px;"><p style="font-weight: 700; margin-bottom: 0px;" class="standart-p">Ease of operating</p></th>
-            <td><p style="color: #47b93d; margin-bottom: 0px;" class="standart-p">user with a smartphone</p></td>
-            <td><p style="color: #b93d3d; margin-bottom: 0px;" class="standart-p">drone pilot with tech skills</p></td>
-            <td><p style="color: #b93d3d; margin-bottom: 0px;" class="standart-p">drone pilot</p></td>
-            <td><p style="color: #b93d3d; margin-bottom: 0px;" class="standart-p">drone pilot</p></td>
-          </tr>
-          <tr>
-            <th scope="row" style="height: 60px; text-align: end; padding-right: 15px;"><p style="font-weight: 700; margin-bottom: 0px;" class="standart-p">Level of autonomy</p></th>
-            <td><p style="color: #47b93d; margin-bottom: 0px;" class="standart-p">fully autonomous</p></td>
-            <td><p style="color: #47b93d; margin-bottom: 0px;" class="standart-p">semi autonomous</p></td>
-            <td><p style="color: #b93d3d; margin-bottom: 0px;" class="standart-p">fully manual</p></td>
-            <td><p style="color: #b93d3d; margin-bottom: 0px;" class="standart-p">fully manual</p></td>
-          </tr>
-          <tr>
-            <th scope="row" style="height: 60px; text-align: end; padding-right: 15px;"><p style="font-weight: 700; margin-bottom: 0px;" class="standart-p">AI human detection</p></th>
-            <td><p style="color: #47b93d; margin-bottom: 0px;" class="standart-p">Yes</p></td>
-            <td><p style="color: #47b93d; margin-bottom: 0px;" class="standart-p">Yes</p></td>
-            <td><p style="color: #b93d3d; margin-bottom: 0px;" class="standart-p">No</p></td>
-            <td><p style="color: #b93d3d; margin-bottom: 0px;" class="standart-p">No</p></td>
-          </tr>
-          <tr>
-            <th scope="row" style="height: 60px; text-align: end; padding-right: 15px;"><p style="font-weight: 700; margin-bottom: 0px;" class="standart-p">Search & Rescue features</p></th>
-            <td><p style="color: #47b93d; margin-bottom: 0px;" class="standart-p">Yes</p></td>
-            <td><p style="color: #47b93d; margin-bottom: 0px;" class="standart-p">Yes</p></td>
-            <td><p style="color: #47b93d; margin-bottom: 0px;" class="standart-p">Yes</p></td>
-            <td><p style="color: #b93d3d; margin-bottom: 0px;" class="standart-p">No</p></td>
-          </tr>
-          <tr style="font-size: 20px;">
-            <th scope="row" style="height: 60px; text-align: end; padding-right: 15px;"><p style="font-weight: 700; margin-bottom: 0px;" class="standart-p">Price</p></th>
-            <td>$12.000</td>
-            <td>$63.000</td>
-            <td>$12.000</td>
-            <td>$7.000</td>
-          </tr>
-        </tbody>
+            <tr>
+                <th colspan="2" scope="row" style="height: 60px; text-align: end; padding-right: 5px;"><p style="font-weight: 700; margin-bottom: 0px;" class="standart-p">Ease of operating</p></th>
+                <td><p style="color: #47b93d; margin-bottom: 0px;" class="standart-p">user with a web app</p></td>
+                <td><p style="color: #b93d3d; margin-bottom: 0px;" class="standart-p">drone pilot with tech skills</p></td>
+                <td><p style="color: #b93d3d; margin-bottom: 0px;" class="standart-p">drone pilot</p></td>
+                <td><p style="color: #b93d3d; margin-bottom: 0px;" class="standart-p">drone pilot</p></td>
+            </tr>
+            <tr>
+                <th colspan="2" scope="row" style="height: 60px; text-align: end; padding-right: 5px;"><p style="font-weight: 700; margin-bottom: 0px;" class="standart-p">Level of autonomy</p></th>
+                <td><p style="color: #47b93d; margin-bottom: 0px;" class="standart-p">auto</p></td>
+                <td><p style="color: #47b93d; margin-bottom: 0px;" class="standart-p">semi auto</p></td>
+                <td><p style="color: #b93d3d; margin-bottom: 0px;" class="standart-p">manual</p></td>
+                <td><p style="color: #b93d3d; margin-bottom: 0px;" class="standart-p">manual</p></td>
+            </tr>
+            <tr>
+                <th colspan="2" scope="row" style="height: 60px; text-align: end; padding-right: 5px;"><p style="font-weight: 700; margin-bottom: 0px;" class="standart-p">AI human detection</p></th>
+                <td><p style="color: #47b93d; margin-bottom: 0px;" class="standart-p">Yes</p></td>
+                <td><p style="color: #47b93d; margin-bottom: 0px;" class="standart-p">Yes</p></td>
+                <td><p style="color: #b93d3d; margin-bottom: 0px;" class="standart-p">No</p></td>
+                <td><p style="color: #b93d3d; margin-bottom: 0px;" class="standart-p">No</p></td>
+            </tr>
+            <tr>
+                <th colspan="2" scope="row" style="height: 60px; text-align: end; padding-right: 5px;"><p style="font-weight: 700; margin-bottom: 0px;" class="standart-p">Search & Rescue features</p></th>
+                <td><p style="color: #47b93d; margin-bottom: 0px;" class="standart-p">Yes</p></td>
+                <td><p style="color: #47b93d; margin-bottom: 0px;" class="standart-p">Yes</p></td>
+                <td><p style="color: #47b93d; margin-bottom: 0px;" class="standart-p">Yes</p></td>
+                <td><p style="color: #b93d3d; margin-bottom: 0px;" class="standart-p">No</p></td>
+            </tr>
+            <tr>
+                <th colspan="2" scope="row" style="height: 60px; text-align: end; padding-right: 5px;"><p style="font-weight: 700; margin-bottom: 0px;" class="standart-p">Price</p></th>
+                <td>$12.000</td>
+                <td>$63.000</td>
+                <td>$12.000</td>
+                <td>$7.000</td>
+            </tr>
+
       </table>
     <h2 class="text-light mt-5">Roadmap</h2>
     <div style="position: relative; height: 450px;">
