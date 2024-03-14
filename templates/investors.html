@@ -12,22 +12,69 @@
 <div id="content-container" class="container">
     <h1 class="text-light mb-3">Needlee is opened for investments</h1>
     <div class="d-flex flex-row mb-3 mt-3 justify-content-left">
-        <div style="width: 30%; position: relative;">
+        <div style="width: 30%; min-width: 160px; position: relative;">
             <img src="{{ url_for('static', filename='img/pitch/market.png') }}" class="rounded img-fluid">
             <p class="standart-p" style="line-height: 1.4; margin-bottom: 0px; text-align: center; position: absolute; left: 50%; top: 18%; transform: translate(-50%, -50%);">$32 billion</p>
             <p class="standart-p" style="line-height: 1.4; margin-bottom: 0px; text-align: center; font-size: 20px; position: absolute; left: 50%; top: 45%; transform: translate(-50%, -50%);">$3.9 billion</p>
             <p class="standart-p" style="line-height: 1.4; max-width: 35%; margin-bottom: 0px; text-align: center; font-size: 20px; position: absolute; left: 50%; top: 75%; transform: translate(-50%, -50%);">$500 million</p>
-            <hr style="margin: 0px; opacity: 1; width: 45%; border: none; border-top: 2px dotted white; position: absolute; right: -15%; top: 18%; ">
-            <hr style="margin: 0px; opacity: 1; width: 45%; border: none; border-top: 2px dotted white; position: absolute; right: -15%; top: 45%; ">
-            <hr style="margin: 0px; opacity: 1; width: 45%; border: none; border-top: 2px dotted white; position: absolute; right: -15%; top: 75%; ">
-            <p class="large-p" style="line-height: 1.4; margin-bottom: 0px; text-align: left; position: absolute; right: -38%; top: 18%; transform: translate(-10%, -50%);">TAM</p>
-            <p class="large-p" style="line-height: 1.4; margin-bottom: 0px; text-align: left; position: absolute; right: -38%; top: 45%; transform: translate(-10%, -50%);">SAM</p>
-            <p class="large-p" style="line-height: 1.4; margin-bottom: 0px; text-align: left; position: absolute; right: -38%; top: 75%; transform: translate(-10%, -50%);">SOM</p>
+            <!-- <hr style="margin: 0px; opacity: 1; width: 30%; border: none; border-top: 2px dotted white; position: absolute; right: 0%; top: 18%; ">
+            <hr style="margin: 0px; opacity: 1; width: 30%; border: none; border-top: 2px dotted white; position: absolute; right: 0%; top: 45%; ">
+            <hr style="margin: 0px; opacity: 1; width: 30%; border: none; border-top: 2px dotted white; position: absolute; right: 0%; top: 75%; ">
+            <p class="large-p" style="line-height: 1.4; margin-bottom: 0px; text-align: left; position: absolute; right: -25%; top: 18%; transform: translate(-10%, -50%);">TAM</p>
+            <p class="large-p" style="line-height: 1.4; margin-bottom: 0px; text-align: left; position: absolute; right: -25%; top: 45%; transform: translate(-10%, -50%);">SAM</p>
+            <p class="large-p" style="line-height: 1.4; margin-bottom: 0px; text-align: left; position: absolute; right: -25%; top: 75%; transform: translate(-10%, -50%);">SOM</p> -->
         </div>
+        <style>
+            .market-data {
+                line-height: 1.4; 
+                margin-bottom: 0px; 
+                text-align: left; 
+                position: absolute; 
+                left: 110px;
+                transform: translate(0%, -50%);
+
+                @media (max-width:990px) {
+                    left: 65px;
+                } 
+                @media (max-width:530px) {
+                    left: 45px;
+                } 
+            }
+            .market-type {
+                left: 40px;
+                @media (max-width:990px) {
+                    left: 10px;
+                } 
+                @media (max-width:530px) {
+                    left: 0px;
+                } 
+            }
+            .tam {
+                top: 18%;
+                @media (max-width:530px) {
+                    top: -5%;
+                } 
+            }
+            .sam {
+                top: 45%;
+            }
+            .som {
+                top: 75%;
+                @media (max-width:530px) {
+                    top: 95%;
+                } 
+                @media (max-width:410px) {
+                    top: 110%;
+                } 
+            }
+        </style>
         <div style="width: 70%; position: relative;">
-            <p class="standart-p" style="line-height: 1.4; margin-bottom: 0px; text-align: left; position: absolute; left: 20%; top: 18%; transform: translate(0%, -50%);">Global drone market by 2024</p>
-            <p class="standart-p" style="line-height: 1.4; margin-bottom: 0px; text-align: left; position: absolute; left: 20%; top: 45%; transform: translate(0%, -50%);">Search & Rescue drone market where 95% of sales made with basic FPV drones</p>
-            <p class="standart-p" style="line-height: 1.4; margin-bottom: 0px; text-align: left; position: absolute; left: 20%; top: 75%; transform: translate(0%, -50%);">Total annual drone budget of rescue teams in EU searching for a smart UAV solution</p>
+            <p class="large-p market-data market-type tam">TAM</p>
+            <p class="large-p market-data market-type sam">SAM</p>
+            <p class="large-p market-data market-type som">SOM</p>
+            <p class="standart-p market-data tam">Global drone market by 2024</p>
+            <p class="standart-p market-data sam">Search & Rescue drone market where 95% of sales made with basic FPV drones</p>
+            <p class="standart-p market-data som">Total annual drone budget of rescue teams in EU searching for a smart UAV solution</p>
         </div>
     </div>
     <ul style="color: white;">
@@ -58,35 +105,35 @@
                 <th><p style="font-weight: 400; margin-bottom: 0px;" class="standart-p">Multitask FPV drones</p></th>
             </tr>
             <tr>
-                <th colspan="2" scope="row" style="height: 60px; text-align: end; padding-right: 5px;"><p style="font-weight: 700; margin-bottom: 0px;" class="standart-p">Ease of operating</p></th>
+                <th colspan="2" scope="row" style="height: 60px; text-align: end; padding-right: 10px;"><p style="font-weight: 700; margin-bottom: 0px;" class="standart-p">Ease of operating</p></th>
                 <td><p style="color: #47b93d; margin-bottom: 0px;" class="standart-p">user with a web app</p></td>
                 <td><p style="color: #b93d3d; margin-bottom: 0px;" class="standart-p">drone pilot with tech skills</p></td>
                 <td><p style="color: #b93d3d; margin-bottom: 0px;" class="standart-p">drone pilot</p></td>
                 <td><p style="color: #b93d3d; margin-bottom: 0px;" class="standart-p">drone pilot</p></td>
             </tr>
             <tr>
-                <th colspan="2" scope="row" style="height: 60px; text-align: end; padding-right: 5px;"><p style="font-weight: 700; margin-bottom: 0px;" class="standart-p">Level of autonomy</p></th>
+                <th colspan="2" scope="row" style="height: 60px; text-align: end; padding-right: 10px;"><p style="font-weight: 700; margin-bottom: 0px;" class="standart-p">Level of autonomy</p></th>
                 <td><p style="color: #47b93d; margin-bottom: 0px;" class="standart-p">auto</p></td>
                 <td><p style="color: #47b93d; margin-bottom: 0px;" class="standart-p">semi auto</p></td>
                 <td><p style="color: #b93d3d; margin-bottom: 0px;" class="standart-p">manual</p></td>
                 <td><p style="color: #b93d3d; margin-bottom: 0px;" class="standart-p">manual</p></td>
             </tr>
             <tr>
-                <th colspan="2" scope="row" style="height: 60px; text-align: end; padding-right: 5px;"><p style="font-weight: 700; margin-bottom: 0px;" class="standart-p">AI human detection</p></th>
+                <th colspan="2" scope="row" style="height: 60px; text-align: end; padding-right: 10px;"><p style="font-weight: 700; margin-bottom: 0px;" class="standart-p">AI human detection</p></th>
                 <td><p style="color: #47b93d; margin-bottom: 0px;" class="standart-p">Yes</p></td>
                 <td><p style="color: #47b93d; margin-bottom: 0px;" class="standart-p">Yes</p></td>
                 <td><p style="color: #b93d3d; margin-bottom: 0px;" class="standart-p">No</p></td>
                 <td><p style="color: #b93d3d; margin-bottom: 0px;" class="standart-p">No</p></td>
             </tr>
             <tr>
-                <th colspan="2" scope="row" style="height: 60px; text-align: end; padding-right: 5px;"><p style="font-weight: 700; margin-bottom: 0px;" class="standart-p">Search & Rescue features</p></th>
+                <th colspan="2" scope="row" style="height: 60px; text-align: end; padding-right: 10px;"><p style="font-weight: 700; margin-bottom: 0px;" class="standart-p">Search & Rescue features</p></th>
                 <td><p style="color: #47b93d; margin-bottom: 0px;" class="standart-p">Yes</p></td>
                 <td><p style="color: #47b93d; margin-bottom: 0px;" class="standart-p">Yes</p></td>
                 <td><p style="color: #47b93d; margin-bottom: 0px;" class="standart-p">Yes</p></td>
                 <td><p style="color: #b93d3d; margin-bottom: 0px;" class="standart-p">No</p></td>
             </tr>
             <tr>
-                <th colspan="2" scope="row" style="height: 60px; text-align: end; padding-right: 5px;"><p style="font-weight: 700; margin-bottom: 0px;" class="standart-p">Price</p></th>
+                <th colspan="2" scope="row" style="height: 60px; text-align: end; padding-right: 10px;"><p style="font-weight: 700; margin-bottom: 0px;" class="standart-p">Price</p></th>
                 <td>$12.000</td>
                 <td>$63.000</td>
                 <td>$12.000</td>
