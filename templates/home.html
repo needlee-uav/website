@@ -10,13 +10,47 @@
 </div>
 
 <div class="container" id="content-container">
-    <h1 class="text-light mb-3">Needlee AI: smart search operations</h1>
-    <p class="standart-p">More than 90% of search and rescue teams use first-person-view drones in their operations. Finding people from a bird's eye view with the human eye is almost impossible.</p>
-    <p class="standart-p">A fully autonomous Needlee Drone solves this problem: AI will take over the recognition and validation of people in difficult terrain, reporting detected targets to your web application.</p>           
-    <h2 class="text-light mb-3 mt-5">Workflow</h2>
-    <p class="standart-p">Needlee complex includes an AI drone (or a group of drones) and the Needlee Console: a flight control web application.</p>
-    <p class="standart-p">All the flight data comes to the Console, so even multiple drones could be managed easily with a single operator.</p>
-    <div class="d-flex flex-row mb-3 mt-5 justify-content-between">
+    <h1 class="text-light mb-5 text-center">Needlee AI search drones</h1>
+    <div class="row">
+        <div class="col-sm-6 mb-3 d-flex align-items-stretch border-dark">
+            <div class="card">
+                <img src="{{ url_for('static', filename='img/products/needlee-v1.png') }}" class="card-img-top" alt="...">
+                <div class="card-body bg d-flex bg-dark flex-column">
+                    <h5 class="card-title text-light">Needlee-V1</h5>
+                    <p class="standart-p card-text">Full autopilot AI driven quadcopter for human detection operations in hard-to-reach areas.</p>
+                    <ul style="color: white;">
+                        <li><p class="standart-p">Full autopilot</p></li>
+                        <li><p class="standart-p">Search & rescue AI</p></li>
+                        <li><p class="standart-p">Operating: Web app</p></li>
+                        <li><p class="standart-p">Time in the air: 38min</p></li>
+                    </ul>
+                    <div class="d-grid gap-2 d-md-flex justify-content-center mt-auto">
+                        <a href="#" class="btn btn-outline-light">Specs</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 mb-3 d-flex align-items-stretch">
+            <div class="card">
+                <img src="{{ url_for('static', filename='img/products/needlee-v2.png') }}" class="card-img-top" alt="...">
+                <div class="card-body d-flex flex-column bg-dark">
+                    <h5 class="card-title text-light">Needlee-V2 (comming soon)</h5>
+                    <p class="standart-p card-text">Full autopilot AI driven VTOL drone for patrolling and human detection operations.</p>
+                    <ul style="color: white;">
+                        <li><p class="standart-p">Full autopilot</p></li>
+                        <li><p class="standart-p">Search & patrolling AI</p></li>
+                        <li><p class="standart-p">Operating: Web app</p></li>
+                        <li><p class="standart-p">Time in the air: 140min</p></li>
+                    </ul>
+                    <div class="d-grid gap-2 d-md-flex justify-content-center mt-auto">
+                        <a href="#" class="btn btn-outline-light">Specs</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h2 class="text-light mb-5 mt-5">Workflow</h2>
+    <div class="d-flex flex-row mb-3 mt-3 justify-content-between">
         <div class="card-25">
             <img src="{{ url_for('static', filename='img/solution/web-app-1.png') }}" class="rounded img-fluid mb-3">
             <div style="border-radius: 15px; border: 1px solid #4e4e4e; padding: 10px 20px;">
@@ -63,27 +97,8 @@
             </p>
         </div>
     </div>
-    <style>
-        .double-group-container {
-            width: 100%;
-            margin-bottom: 20px;
-            height: auto;
-        }
-        .double-group-element {
-            width: 47%; 
-            margin-left: 3%;
-            margin-bottom: 20px;
-            float: left;
-            align-items: center;
-            display: flex;
-            @media (max-width:520px) {
-                width: 100%;
-            }
-        }
-    </style>
 
     <h2 class="text-light mb-4 mt-5">Key features</h2>
-
     <div class="double-group-container">
         <div class="double-group-element">
             <img class="icon-60" src="{{ url_for('static', filename='img/solution/autopilot-icon.svg') }}">
@@ -116,23 +131,6 @@
         <div class="double-group-element">
             <img class="icon-60" src="{{ url_for('static', filename='img/solution/sos-icon.svg') }}">
             <p class="standart-p" style="margin-bottom: 0px;">Emergency GPS signal</p>
-        </div>
-    </div>
-
-
-    <h2 class="text-light mb-3 mt-5">What's next?</h2>
-    <div class="d-flex flex-row mb-5 mt-5 justify-content-between">
-        <div>
-            <button class="btn btn-outline-light btn-lg">Needlee V1 overview</button>
-        </div>
-        <div>
-            <button class="btn btn-outline-light btn-lg">Get Needlee for free!</button>
-        </div>
-        <div>
-            <a class="btn btn-outline-light btn" href="/investors">Investments & partnership</a>
-        </div>
-        <div>
-            <button class="btn btn-outline-light btn-lg">Contact us</button>
         </div>
     </div>
 </div>

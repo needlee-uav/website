@@ -1,3 +1,6 @@
+#content-container {
+    @media (min-width:1290px) { width: 1200px!important; }
+}
 p {
  font-size: 18px;
  color: white;
@@ -142,5 +145,64 @@ p {
         margin-right: 15px; 
         height: 35px; 
         width: 35px; 
+    }
+}
+
+.market-data {
+    line-height: 1.4; 
+    margin-bottom: 0px; 
+    text-align: left; 
+    position: absolute; 
+    left: 110px;
+    transform: translate(0%, -50%);
+
+    @media (max-width:990px) {
+        left: 65px;
+    } 
+
+}
+.market-type {
+    left: 40px;
+    @media (max-width:990px) {
+        left: 10px;
+    } 
+}
+.tam {
+    top: 18%; 
+}
+.sam {
+    top: 45%;
+}
+.som {
+    top: 75%;  
+}
+
+.team-member-info {
+    width: 80%; 
+    transform: translate(15%); 
+    border-radius: 15px; 
+    background-color: white; 
+    border: 1px solid #4e4e4e; 
+    padding: 10px 20px 5px;
+    @media (max-width: 1000px) { 
+        width: 100%; 
+        transform: translate(0%); 
+    }
+}
+
+.double-group-container {
+    width: 100%;
+    margin-bottom: 20px;
+    height: 250px;
+}
+.double-group-element {
+    width: 47%; 
+    margin-right: 3%;
+    margin-bottom: 20px;
+    float: left;
+    align-items: center;
+    display: flex;
+    @media (max-width:520px) {
+        width: 100%;
     }
 }
