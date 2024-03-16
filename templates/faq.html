@@ -1,0 +1,88 @@
+
+<style>
+
+details{
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+summary {
+  padding: .5em 1.3rem;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;  
+  transition: height 1s ease;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary:after{
+  content: "\002B";
+}
+
+details[open] summary {
+    border-bottom: 1px solid #aaa;
+    margin-bottom: .5em;
+}
+
+details[open] summary:after{
+  content: "\00D7";
+}
+
+details[open] div{
+  padding: .5em 1em;
+  background-color: #303030;
+}
+
+</style>
+<div class="container">
+    <h1 class="text-light mb-3 mt-5 text-left">Frequently Asked Questions</h1>
+    <h2 class="text-light mb-3 mt-5 text-left">Needlee V1</h2>
+    <details>
+        <summary><p class="large-p" style="margin: 0px;">How do I activate Needlee V1 drone?</p></summary>
+        <div>
+            <p class="standart-p">Connect your mobile device (connected to the internet) with the Needlee Console, login using credentials your recieved with an email after the order. Then power Needlee V1 to connect via Needlee Console. Follow the instructions in the Console to activate Needlee V1.</p>
+        </div>
+    </details>
+    <details>
+        <summary><p class="large-p" style="margin: 0px;">Before using Needlee V1, what app do I need to install?</p></summary>
+        <div>
+            <p class="standart-p">Needlee V1 can only be used with the Needlee Console. You can download the latest PWA application on your device or use the Needlee Console web version. Needlee Console requires stable internet connection.</p>
+        </div>
+    </details>
+    <details>
+        <summary><p class="large-p" style="margin: 0px;">What is the wind speed resistance of Needlee V1?</p></summary>
+        <div>
+            <p class="standart-p">The max wind speed resistance of Needlee V1 is 8 m/s.</p>
+        </div>
+    </details>
+    <details>
+        <summary><p class="large-p" style="margin: 0px;">Is Needlee V1 waterproof?</p></summary>
+        <div>
+            <p class="standart-p">No. Avoid contact with water during use as it may lead to damage of the device. If it rains during flight, please return and land as soon as possible, and wait until the aircraft is fully dry inside before using it again.</p>
+        </div>
+    </details>
+    <h2 class="text-light mb-3 mt-5 text-left">Needlee Console</h2>
+    <details>
+        <summary><p class="large-p" style="margin: 0px;">How do I get a Needlee Console account?</p></summary>
+        <div>
+            <p class="standart-p">Needlee Console account is automatically created for each Needlee V1 drone. You recieve temporary login and password via an email with full setup instructions after your Needlee V1 order is created.</p>
+        </div>
+    </details>
+    <details>
+        <summary><p class="large-p" style="margin: 0px;">What do I need to use Needlee Console?</p></summary>
+        <div>
+            <p class="standart-p">The easiest way is to use the web version of Needlee Console. You can additionlly install the PWA Needlee Console application to increase performance. You'll need stable internet connection to use Needlee Console.</p>
+        </div>
+    </details>
+    <details>
+        <summary><p class="large-p" style="margin: 0px;">Where do I get Needlee Console tutorials?</p></summary>
+        <div>
+            <p class="standart-p">You'll recieve a complite user guide via an email with full setup instructions after your Needlee V1 order is created.</p>
+        </div>
+    </details>
+</div>
+  
+  
