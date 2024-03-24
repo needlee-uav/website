@@ -181,6 +181,9 @@ h3 {
     @media (max-width:1000px) {
         content: url(img/solution/header-image-sm.png);
     }
+    @media (max-width:500px) {
+        content: url(img/solution/header-image-mobile.png);
+    }
 }
 
 .human-container {
@@ -210,6 +213,11 @@ h3 {
     top: 2%;
     @media (max-width:1000px) {
         width: 35%;
+        left: 0%;
+        top: 3%;
+    }
+    @media (max-width:500px) {
+        width: 45%;
         left: 0%;
         top: 3%;
     }
