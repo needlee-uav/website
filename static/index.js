@@ -6,6 +6,8 @@ window.mobileCheck = function() {
 
 const mobile = window.mobileCheck();
 
+document.getElementById("mobile-menu").addEventListener("click", showMobileMenu)
+
 resizeWindow()
 resizeContent()
 window.addEventListener("resize", resizeContent);
@@ -23,13 +25,17 @@ function resizeFonts(class_id, size) {
 }
 
 function resizeContent() {
-    if (document.getElementById("content-container").clientWidth <= 720) {
-        resizeFonts('standart-p', 14)
-        resizeFonts('large-p', 18)
-    } else {
-        resizeFonts('standart-p', 18)
-        resizeFonts('large-p', 24)
-    }
+    try {
+        if (document.getElementById("content-container").clientWidth <= 720) {
+            resizeFonts('standart-p', 14)
+            resizeFonts('large-p', 18)
+        } else {
+            resizeFonts('standart-p', 18)
+            resizeFonts('large-p', 24)
+        }
+    } catch {}
+    collapseHeader()
+
 }
 
 function resizeWindow() {
@@ -59,4 +65,42 @@ function resizeWindow() {
     document.getElementById("crop").style = `z-index: 3; top: ${img_offset}px; clip-path: polygon(${crop_point[0]}px ${crop_point[1]}px, ${crop_bottom[0]}px 100%, 100% 100%);`;
     document.getElementById("concept-overlay-human").style = `width: ${human_width}px; transform: translate(-${human_width}px, -0%); left: ${human_offset[0]}px; top: ${human_offset[1]}px;`;
     document.getElementById("concept-overlay-drone").style = `width: ${drone_width}px; left: ${drone_offset}px; top: ${document.getElementById("nav-menu").clientHeight}px;`;
+}
+
+
+function collapseHeader() {
+    if (document.body.clientWidth <= 1000) {
+        document.getElementById("mobile-menu").style = "display: inline; position: absolute; right: 0%; float: right; margin: 12px; z-index: 2;"
+        setHeaderItemsDisplayOption("none")
+    } else {
+        document.getElementById("mobile-menu").style = "display: none;"
+        setHeaderItemsDisplayOption("inline")
+    }
+}
+
+function setHeaderItemsDisplayOption(display) {
+    var childs = document.getElementById("header-container").children[0].children;
+    var len = childs.length, i = -1;
+        if(++i < len) do {
+            if (childs[i].tagName == "LI") {
+                childs[i].style = `display: ${display};`
+            }
+        } while(++i < len);
+}
+
+function showMobileMenu() {
+    if (document.getElementById("mobile-menu-icon").src.toString().indexOf("close") != -1) {
+        document.getElementById("mobile-menu-box").style.display = "none"
+        document.getElementById("mobile-menu-icon").src = document.getElementById("mobile-menu-icon").src.toString().replace("-icon-close", "-icon")
+        document.getElementById("page-content").style.filter = "brightness(100%)"
+        document.getElementById("home-button").style.filter = "brightness(100%)"
+        document.getElementById("header-image-container").style.filter = "brightness(100%)"
+    } else {
+        document.getElementById("mobile-menu-box").style.display = "inline"
+        document.getElementById("page-content").style.filter = "brightness(50%)"
+        document.getElementById("home-button").style.filter = "brightness(50%)"
+        document.getElementById("header-image-container").style.filter = "brightness(50%)"
+        document.getElementById("mobile-menu-icon").src = document.getElementById("mobile-menu-icon").src.toString().replace("-icon", "-icon-close")
+    }
+
 }

@@ -8,13 +8,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'>
 </head>
+
 <body>
     <div class="content-container">
-        <div class="header-container" style="margin: 5px 10px 0px 10px;">
+        <div id="header-container" class="header-container" style="margin: 5px 10px 0px 10px;">
             <ul>
-                <a class="home-button" href="/">
-                    <img src="{{ url_for('static', filename='img/needlee-logo-full.png') }}" >
+                <a id="home-button" class="home-button" href="/">
+                    <img src="{{ url_for('static', filename='img/needlee-logo-full.png') }}">
                 </a>
+                <div id="mobile-menu" style="display: none;">
+                    <a>
+                        <img id="mobile-menu-icon" src="{{ url_for('static', filename='img/mobile-menu-icon.svg') }}" style="height: 32px;">
+                    </a>
+                    <div id="mobile-menu-box" style="display: none; width: 200px; border-radius: 5px; border: 1px solid #E3E3E3; height: 260px; background-color: #212529; position: absolute; right: 0px;">
+                        <ul style="display: block;">
+                            <li><a style="color: #F8F9FA;" href="/login">Console</a></li>
+                            <li><a style="color: #F8F9FA;" href="/contact">Contact & Support</a></li>
+                            <li><a style="color: #F8F9FA;" href="/investors">Investors</a></li>
+                            <li><a style="color: #F8F9FA;" href="/faq">Learning & FAQ</a></li>
+                            <li><a style="color: #F8F9FA;" href="/products">Products</a></li>
+                        </ul>
+                    </div>
+                </div>
                 <li style="height: 56px;">
                     <div>
                         <a href="/login" class="primary-light-button">Console</a>
@@ -29,7 +44,7 @@
     </div>
     <div style="{{header_style}}">
     <!-- <div style="overflow: hidden;"> -->
-        <div class="header-image-container">
+        <div id="header-image-container" class="header-image-container">
             <img src="{{ url_for('static', filename='img/solution/header-image.png') }}">
             <div class="human-container">
                 <img src="{{ url_for('static', filename='img/solution/human.png') }}">
@@ -39,7 +54,7 @@
             </div>
         </div>
     </div>
-    <div class="content-container">
+    <div id="page-content" class="content-container">
         <div style="margin: 0px 10px;">
             {% include section %}
         </div>
