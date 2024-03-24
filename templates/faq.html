@@ -1,45 +1,7 @@
-
-<style>
-
-details{
-  color: #fff;
-  font-size: 1.5rem;
-}
-
-summary {
-  padding: .5em 1.3rem;
-  list-style: none;
-  display: flex;
-  justify-content: space-between;  
-  transition: height 1s ease;
-}
-
-summary::-webkit-details-marker {
-  display: none;
-}
-
-summary:after{
-  content: "\002B";
-}
-
-details[open] summary {
-    border-bottom: 1px solid #aaa;
-    margin-bottom: .5em;
-}
-
-details[open] summary:after{
-  content: "\00D7";
-}
-
-details[open] div{
-  padding: .5em 1em;
-  background-color: #303030;
-}
-
-</style>
-<div class="container">
-    <h1 class="text-light mb-3 mt-5 text-left">Frequently Asked Questions</h1>
-    <h2 class="text-light mb-3 mt-5 text-left">Needlee V1</h2>
+<div>
+    <h1>General Questions FAQ</h1>
+    <a href="/contact" class="primary-light-button small-button">Contact Needlee team</a>
+    <h2>Needlee V1</h2>
     <details>
         <summary><p class="large-p" style="margin: 0px;">How do I activate Needlee V1 drone?</p></summary>
         <div>
@@ -64,7 +26,13 @@ details[open] div{
             <p class="standart-p">No. Avoid contact with water during use as it may lead to damage of the device. If it rains during flight, please return and land as soon as possible, and wait until the aircraft is fully dry inside before using it again.</p>
         </div>
     </details>
-    <h2 class="text-light mb-3 mt-5 text-left">Needlee Console</h2>
+    <details>
+        <summary><p class="large-p" style="margin: 0px;">How do I update Needlee V1 drone software?</p></summary>
+        <div>
+            <p class="standart-p">Each update is available in your Needlee Console.</p>
+        </div>
+    </details>
+    <h2>Needlee Console</h2>
     <details>
         <summary><p class="large-p" style="margin: 0px;">How do I get a Needlee Console account?</p></summary>
         <div>
@@ -84,5 +52,3 @@ details[open] div{
         </div>
     </details>
 </div>
-  
-  

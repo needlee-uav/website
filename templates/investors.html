@@ -1,36 +1,22 @@
-<div id="eye-spot-box">
-    <div class="concept-overlay" id="concept-overlay-human">
-        <img src="{{ url_for('static', filename='img/solution/human.png') }}" width="100%">
-    </div>
-    <div class="concept-overlay" id="concept-overlay-drone">
-        <img src="{{ url_for('static', filename='img/solution/needlee-image.png') }}" width="100%">
-    </div>
-    <img class=" border-light border-bottom" id="concept-img" src="{{ url_for('static', filename='img/solution/forest.png') }}" width="100%"> 
-    <img id="crop" src="{{ url_for('static', filename='img/solution/human-spot.png') }}" width="100%">   
-</div>
-
-<div id="content-container" class="container">
-    <h1 class="text-light mb-3">Needlee is opened for investments</h1>
-    <div class="d-flex flex-row mb-3 mt-3 justify-content-left">
+<div id="content-container">
+    <h1>Needlee is opened for investments</h1>
+    <div style="display: flex;">
         <div style="width: 30%; min-width: 160px; position: relative;">
-            <img src="{{ url_for('static', filename='img/pitch/market.png') }}" class="rounded img-fluid">
-            <p class="standart-p" style="line-height: 1.4; margin-bottom: 0px; text-align: center; position: absolute; left: 50%; top: 18%; transform: translate(-50%, -50%);">$32 billion</p>
-            <p class="standart-p" style="line-height: 1.4; margin-bottom: 0px; text-align: center; font-size: 20px; position: absolute; left: 50%; top: 45%; transform: translate(-50%, -50%);">$3.9 billion</p>
-            <p class="standart-p" style="line-height: 1.4; max-width: 35%; margin-bottom: 0px; text-align: center; font-size: 20px; position: absolute; left: 50%; top: 75%; transform: translate(-50%, -50%);">$500 million</p>
+            <img src="{{ url_for('static', filename='img/pitch/market.png') }}" width="100%">
+            <p class="standart-p market-value" style="top: 18%;">$32 billion</p>
+            <p class="standart-p market-value" style="top: 45%;">$3.9 billion</p>
+            <p class="standart-p market-value" style="top: 75%; max-width: 35%;">$500 million</p>
         </div>
-        <style>
-            
-        </style>
         <div style="width: 70%; position: relative;">
-            <hr style="margin: 0px; opacity: 1; width: 17%; border: none; border-top: 2px dotted white; position: absolute; left: -14%; top: 18%; ">
-            <hr style="margin: 0px; opacity: 1; width: 17%; border: none; border-top: 2px dotted white; position: absolute; left: -14%; top: 45%; ">
-            <hr style="margin: 0px; opacity: 1; width: 17%; border: none; border-top: 2px dotted white; position: absolute; left: -14%; top: 75%; ">
-            <p class="large-p market-data market-type tam">TAM</p>
-            <p class="large-p market-data market-type sam">SAM</p>
-            <p class="large-p market-data market-type som">SOM</p>
-            <p class="standart-p market-data tam">Global drone market by 2024</p>
-            <p class="standart-p market-data sam">Search & Rescue drone market where 95% of sales made with basic FPV drones</p>
-            <p class="standart-p market-data som">Total annual drone budget of rescue teams in EU searching for a smart UAV solution</p>
+            <hr class="market-value-hr" style="top: 18%;">
+            <hr class="market-value-hr" style="top: 45%;">
+            <hr class="market-value-hr" style="top: 75%;">
+            <p class="large-p market-data market-type tam" style="margin: 0px;">TAM</p>
+            <p class="large-p market-data market-type sam" style="margin: 0px;">SAM</p>
+            <p class="large-p market-data market-type som" style="margin: 0px;">SOM</p>
+            <p class="standart-p market-data tam" style="margin: 0px; padding-top: 3px;">Global drone market by 2024</p>
+            <p class="standart-p market-data sam" style="margin: 0px; padding-top: 3px;">Search & Rescue drone market where 95% of sales made with basic FPV drones</p>
+            <p class="standart-p market-data som" style="margin: 0px; padding-top: 3px;">Total annual drone budget of rescue teams in EU searching for a smart UAV solution</p>
         </div>
     </div>
     <ul style="color: white;">
@@ -44,66 +30,62 @@
             <p class="standart-p">No solution for an autonomous search & rescue missions exists.</p>
         </li>
     </ul>
-    
-    <h2 class="text-light mb-4 mt-5">Competition</h2>
-    <table class="table table-bordered table-dark" style="table-layout: fixed; text-align: center; vertical-align: middle;">
-        <colgroup>
-            <col style="width: 10px;"/>
-            <col/>
-            <col/>
-            <col/>
-          </colgroup>
-            <tr>
-                <th colspan="2" scope="row"></th>
-                <th><img src="{{ url_for('static', filename='img/needlee-v1-logo.svg') }}" class="rounded img-fluid"></th>
-                <th><p style="font-weight: 400; margin-bottom: 0px;" class="standart-p">Multitask autopilot drones</p></th>
-                <th><p style="font-weight: 400; margin-bottom: 0px;" class="standart-p">Rescue FPV drones</p></th>
-                <th><p style="font-weight: 400; margin-bottom: 0px;" class="standart-p">Multitask FPV drones</p></th>
-            </tr>
-            <tr>
-                <th colspan="2" scope="row" style="height: 60px; text-align: end; padding-right: 10px;"><p style="font-weight: 700; margin-bottom: 0px;" class="standart-p">Ease of operating</p></th>
-                <td><p style="color: #47b93d; margin-bottom: 0px;" class="standart-p">user with a web app</p></td>
-                <td><p style="color: #b93d3d; margin-bottom: 0px;" class="standart-p">drone pilot with tech skills</p></td>
-                <td><p style="color: #b93d3d; margin-bottom: 0px;" class="standart-p">drone pilot</p></td>
-                <td><p style="color: #b93d3d; margin-bottom: 0px;" class="standart-p">drone pilot</p></td>
-            </tr>
-            <tr>
-                <th colspan="2" scope="row" style="height: 60px; text-align: end; padding-right: 10px;"><p style="font-weight: 700; margin-bottom: 0px;" class="standart-p">Level of autonomy</p></th>
-                <td><p style="color: #47b93d; margin-bottom: 0px;" class="standart-p">auto</p></td>
-                <td><p style="color: #47b93d; margin-bottom: 0px;" class="standart-p">semi auto</p></td>
-                <td><p style="color: #b93d3d; margin-bottom: 0px;" class="standart-p">manual</p></td>
-                <td><p style="color: #b93d3d; margin-bottom: 0px;" class="standart-p">manual</p></td>
-            </tr>
-            <tr>
-                <th colspan="2" scope="row" style="height: 60px; text-align: end; padding-right: 10px;"><p style="font-weight: 700; margin-bottom: 0px;" class="standart-p">AI human detection</p></th>
-                <td><p style="color: #47b93d; margin-bottom: 0px;" class="standart-p">Yes</p></td>
-                <td><p style="color: #47b93d; margin-bottom: 0px;" class="standart-p">Yes</p></td>
-                <td><p style="color: #b93d3d; margin-bottom: 0px;" class="standart-p">No</p></td>
-                <td><p style="color: #b93d3d; margin-bottom: 0px;" class="standart-p">No</p></td>
-            </tr>
-            <tr>
-                <th colspan="2" scope="row" style="height: 60px; text-align: end; padding-right: 10px;"><p style="font-weight: 700; margin-bottom: 0px;" class="standart-p">Search & Rescue features</p></th>
-                <td><p style="color: #47b93d; margin-bottom: 0px;" class="standart-p">Yes</p></td>
-                <td><p style="color: #47b93d; margin-bottom: 0px;" class="standart-p">Yes</p></td>
-                <td><p style="color: #47b93d; margin-bottom: 0px;" class="standart-p">Yes</p></td>
-                <td><p style="color: #b93d3d; margin-bottom: 0px;" class="standart-p">No</p></td>
-            </tr>
-            <tr>
-                <th colspan="2" scope="row" style="height: 60px; text-align: end; padding-right: 10px;"><p style="font-weight: 700; margin-bottom: 0px;" class="standart-p">Price</p></th>
-                <td>$12.000</td>
-                <td>$63.000</td>
-                <td>$12.000</td>
-                <td>$7.000</td>
-            </tr>
 
-      </table>
-    <h2 class="text-light mt-5">Roadmap</h2>
+    <h2>Competition</h2>
+    <table style="table-layout: fixed; text-align: center; vertical-align: middle;">
+        <colgroup>
+            <col style="width: 22%"/>
+            <col style="width: 19.5%"/>
+            <col style="width: 19.5%"/>
+            <col style="width: 19.5%"/>
+            <col style="width: 19.5%"/>
+        </colgroup>
+        <tr>
+            <th></th>
+            <th><img src="{{ url_for('static', filename='img/needlee-v1-logo.svg') }}" width="90%"></th>
+            <th style="padding: 10px 0px;"><p class="standart-p quality-standart">Multitask autopilot drones</p></th>
+            <th style="padding: 10px 0px;"><p class="standart-p quality-standart">Rescue FPV drones</p></th>
+            <th style="padding: 10px 0px;"><p class="standart-p quality-standart">Multitask FPV drones</p></th>
+        </tr>
+        <tr>
+            <th class="quality-list"><p class="standart-p quality-bold">Ease of operating</p></th>
+            <td><p class="standart-p quality-green">user with a web app</p></td>
+            <td><p class="standart-p quality-red">drone pilot with tech skills</p></td>
+            <td><p class="standart-p quality-red">drone pilot</p></td>
+            <td><p class="standart-p quality-red">drone pilot</p></td>
+        </tr>
+        <tr>
+            <th class="quality-list"><p class="standart-p quality-bold">Level of autonomy</p></th>
+            <td><p class="standart-p quality-green">auto</p></td>
+            <td><p class="standart-p quality-green">semi auto</p></td>
+            <td><p class="standart-p quality-red">manual</p></td>
+            <td><p class="standart-p quality-red">manual</p></td>
+        </tr>
+        <tr>
+            <th class="quality-list"><p class="standart-p quality-bold">AI human detection</p></th>
+            <td><p class="standart-p quality-green">Yes</p></td>
+            <td><p class="standart-p quality-green">Yes</p></td>
+            <td><p class="standart-p quality-red">No</p></td>
+            <td><p class="standart-p quality-red">No</p></td>
+        </tr>
+        <tr>
+            <th class="quality-list"><p class="standart-p quality-bold">Search & Rescue features</p></th>
+            <td><p class="standart-p quality-green">Yes</p></td>
+            <td><p class="standart-p quality-green">Yes</p></td>
+            <td><p class="standart-p quality-green">Yes</p></td>
+            <td><p class="standart-p quality-red">No</p></td>
+        </tr>
+        <tr>
+            <th class="quality-list"><p  class="standart-p quality-bold">Price</p></th>
+            <td><p class="standart-p quality-bold">$12.000</p></td>
+            <td><p class="standart-p quality-bold">$63.000</p></td>
+            <td><p class="standart-p quality-bold">$12.000</p></td>
+            <td><p class="standart-p quality-bold">$7.000</p></td>
+        </tr>
+    </table>
+    <h2>Roadmap</h2>
     <div style="position: relative; height: 450px;">
-        <style>
-            
-        </style>
-        <hr style="height: 5px; background: linear-gradient(to right, #A25252, #C19D9D); opacity: 1; margin: 0px; width: 100%; position: absolute; right: 0%; top: 50%; transform: translate(-0%, -50%);">
-      
+        <hr style="border: none; height: 5px; background: linear-gradient(to right, #A25252, #C19D9D); opacity: 1; margin: 0px; width: 100%; position: absolute; right: 0%; top: 50%; transform: translate(-0%, -50%);">
         <div class="roadpoint" style="background: linear-gradient(to right, #A25252, #A16969)">
             <p class="roadpoint-year">2024</p>
             <div class="roadpoint-dashed"></div>
@@ -179,29 +161,41 @@
     </div>
     <p class="standart-p">Needlee is on the Beta testing stage now. Our team continues customer serveys to discover and implement new features and make new target contacts. By the end of the spring 2025 Needlee V1 will be ready to run search missions with the test focus group of rescue teams in EU. These first missions will help us to make last changes in Needlee V1 before sales.</p>
     <p class="standart-p">By the end of the year 2025 50 items will be sold, and our team will be ready for a second round of investment to modernize technology and production and build a VTOL Needlee V2 drone to cover much more complex mission like border guarding.</p>
-    
-    <h2 class="text-light mb-4 mt-5">Team</h2>
-    <div class="d-flex flex-row mb-5 mt-3 justify-content-between">
-        <div class="card-25">
-            <img src="{{ url_for('static', filename='img/pitch/team-stepan.png') }}" class="rounded img-fluid mb-3">
-            <div class="team-member-info">
-                <p class="standart-p text-dark text-center">Stepan Kolodiazhny<br><b>Founder, CEO</b></p>
-                <p class="standart-p text-dark text-center">Tech Manager with CEO experience, UAV engineering and software development skills</b></p>
+
+    <h2>Team</h2>
+    <div class="triple-group-container" style="overflow: hidden;">
+        <div class="triple-group-element left">
+            <img src="{{ url_for('static', filename='img/pitch/team-stepan.png') }}">
+            <div style="border-radius: 15px; padding: 10px 20px; margin: 10px; background-color: #2E3135;">
+                <p class="standart-p" style="margin: 0px;">
+                    Stepan Kolodiazhny<br><b>Founder, CEO</b><br><br>
+                    Tech Manager with CEO experience, UAV and software development skills
+                </p>
             </div>
         </div>
-        <div class="card-25">
-            <img src="{{ url_for('static', filename='img/pitch/team-viktor.png') }}" class="rounded img-fluid mb-3">
-            <div class="team-member-info">
-                <p class="standart-p text-dark text-center">Viktor Uimanov<br><b>Co-Founder, CPO</b></p>
-                <p class="standart-p text-dark text-center">Product Owner experienced with AI products and software development skills</b></p>
+        <div class="triple-group-element center">
+            <img src="{{ url_for('static', filename='img/pitch/team-viktor.png') }}">
+            <div style="border-radius: 15px; padding: 10px 20px; margin: 10px; background-color: #2E3135;">
+                <p class="standart-p" style="margin: 0px;">
+                    Viktor Uimanov<br><b>Co-Founder, CPO</b><br><br>
+                    Product Owner experienced with AI products and software development skills
+                </p>
             </div>
         </div>
-        <div class="card-25">
-            <img src="{{ url_for('static', filename='img/pitch/team-alexander.png') }}" class="rounded img-fluid mb-3">
-            <div class="team-member-info">
-                <p class="standart-p text-dark text-center">Aleksandr Razin<br><b>Co-Founder, CTO</b></p>
-                <p class="standart-p text-dark text-center">Computer Vision engineer specialized in on-device robotics algorithms and image optimization</b></p>
+        <div class="triple-group-element right">
+            <img src="{{ url_for('static', filename='img/pitch/team-alexander.png') }}">
+            <div style="border-radius: 15px; padding: 10px 20px; margin: 10px; background-color: #2E3135;">
+                <p class="standart-p" style="margin: 0px;">
+                    Aleksandr Razin<br><b>Co-Founder, CTO</b><br><br>
+                    Computer Vision engineer specialized in robotics and image optimization
+                </p>
             </div>
         </div>
+    </div>
+    <h2>What's next?</h2>
+    <div style="margin-top: 30px;">
+        <a href="#" style="border-color: #A25252; margin-right: 10px;" class="primary-light-button small-button">Request full pitch deck PDF</a>
+        <a href="#" style="margin-right: 10px;" class="primary-light-button small-button">Request Needlee V1 specifications PDF</a>
+        <a href="contact" class="primary-light-button small-button">Contact Needlee team</a>
     </div>
 </div>

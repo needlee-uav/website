@@ -1,37 +1,33 @@
-<div class="container mt-3" id="content-container">
-    <div class="row">
-        <div class="col-sm-6 mb-3 d-flex align-items-stretch">
-            <div class="card">
-                <img src="{{ url_for('static', filename='img/products/needlee-v1.png') }}" class="card-img-top" alt="...">
-                <div class="card-body d-flex flex-column">
-                    <h5 class="card-title">Needlee-V1</h5>
-                    <p class="standart-p text-dark card-text">Full autopilot AI driven quadcopter for human detection operations in hard-to-reach areas.</p>
-                    <ul>
-                        <li><p class="standart-p text-dark">Time in the air: 38min</p></li>
-                        <li><p class="standart-p text-dark">Weight: 2.3kg</p></li>
-                        <li><p class="standart-p text-dark">Operating: Web app</p></li>
-                    </ul>
-                    <div class="d-grid gap-2 d-md-flex justify-content-center mt-auto">
-                        <a href="#" class="btn btn-outline-dark ">Specs</a>
-                    </div>
-                </div>
+<div class="product-card-container">
+    <div class="product-card">
+        <img src="{{ url_for('static', filename='img/products/needlee-v1.png') }}" alt="needlee-v1">
+        <div class="product-card-body">
+            <p class="large-p" style="margin: 0px;">Needlee-V1</p>
+            <p class="standart-p">Full autopilot AI driven quadcopter for human detection operations in hard-to-reach areas.</p>
+            <ul>
+                <li><p class="standart-p">Full autopilot</p></li>
+                <li><p class="standart-p">Search & rescue AI</p></li>
+                <li><p class="standart-p">Operating: Web app</p></li>
+                <li><p class="standart-p">Time in the air: 38min</p></li>
+            </ul>
+            <div>
+                <a href="#" class="primary-light-button">Specs</a>
             </div>
         </div>
-        <div class="col-sm-6 mb-3 d-flex align-items-stretch">
-            <div class="card">
-                <img src="{{ url_for('static', filename='img/products/needlee-v2.png') }}" class="card-img-top" alt="...">
-                <div class="card-body d-flex flex-column">
-                    <h5 class="card-title">Needlee-V2 (comming soon)</h5>
-                    <p class="standart-p text-dark card-text">Full autopilot AI driven VTOL drone for patrolling and human detection operations.</p>
-                    <ul>
-                        <li><p class="standart-p text-dark">Time in the air: 140min</p></li>
-                        <li><p class="standart-p text-dark">Weight: 9.1kg</p></li>
-                        <li><p class="standart-p text-dark">Operating: Web app</p></li>
-                    </ul>
-                    <div class="d-grid gap-2 d-md-flex justify-content-center mt-auto">
-                        <a href="#" class="btn btn-outline-dark ">Specs</a>
-                    </div>
-                </div>
+    </div>
+    <div class="product-card">
+        <img src="{{ url_for('static', filename='img/products/needlee-v2.png') }}" alt="needlee-v2">
+        <div class="product-card-body">
+            <p class="large-p" style="margin: 0px;">Needlee-V2 (comming soon)</p>
+            <p class="standart-p">Full autopilot AI driven VTOL drone for patrolling and human detection operations.</p>
+            <ul>
+                <li><p class="standart-p">Full autopilot</p></li>
+                <li><p class="standart-p">Search & patrolling AI</p></li>
+                <li><p class="standart-p">Operating: Web app</p></li>
+                <li><p class="standart-p">Time in the air: 140min</p></li>
+            </ul>
+            <div>
+                <a href="#" class="primary-light-button">Specs</a>
             </div>
         </div>
     </div>

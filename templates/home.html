@@ -1,136 +1,126 @@
-<div id="eye-spot-box">
-    <div class="concept-overlay" id="concept-overlay-human">
-        <img src="{{ url_for('static', filename='img/solution/human.png') }}" width="100%">
-    </div>
-    <div class="concept-overlay" id="concept-overlay-drone">
-        <img src="{{ url_for('static', filename='img/solution/needlee-image.png') }}" width="100%">
-    </div>
-    <img class=" border-light border-bottom" id="concept-img" src="{{ url_for('static', filename='img/solution/forest.png') }}" width="100%"> 
-    <img id="crop" src="{{ url_for('static', filename='img/solution/human-spot.png') }}" width="100%">   
-</div>
-
-<div class="container" id="content-container">
-    <h1 class="text-light mb-5 text-center">Needlee AI search drones</h1>
-    <div class="row">
-        <div class="col-sm-6 mb-3 d-flex align-items-stretch border-dark">
-            <div class="card">
-                <img src="{{ url_for('static', filename='img/products/needlee-v1.png') }}" class="card-img-top" alt="...">
-                <div class="card-body bg d-flex bg-dark flex-column">
-                    <h5 class="card-title text-light">Needlee-V1</h5>
-                    <p class="standart-p card-text">Full autopilot AI driven quadcopter for human detection operations in hard-to-reach areas.</p>
-                    <ul style="color: white;">
-                        <li><p class="standart-p">Full autopilot</p></li>
-                        <li><p class="standart-p">Search & rescue AI</p></li>
-                        <li><p class="standart-p">Operating: Web app</p></li>
-                        <li><p class="standart-p">Time in the air: 38min</p></li>
-                    </ul>
-                    <div class="d-grid gap-2 d-md-flex justify-content-center mt-auto">
-                        <a href="#" class="btn btn-outline-light">Specs</a>
-                    </div>
+<div id="content-container">
+    <h1>Needlee AI search drones</h1>
+    <p class="standart-p">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only.</p>
+    <div class="product-card-container">
+        <div class="product-card">
+            <img src="{{ url_for('static', filename='img/products/needlee-v1.png') }}" alt="needlee-v1">
+            <div class="product-card-body">
+                <p class="large-p" style="margin: 0px;">Needlee-V1</p>
+                <p class="standart-p">Full autopilot AI driven quadcopter for human detection operations in hard-to-reach areas.</p>
+                <ul>
+                    <li><p class="standart-p">Full autopilot</p></li>
+                    <li><p class="standart-p">Search & rescue AI</p></li>
+                    <li><p class="standart-p">Operating: Web app</p></li>
+                    <li><p class="standart-p">Time in the air: 38min</p></li>
+                </ul>
+                <div>
+                    <a href="#" class="primary-light-button">Specs</a>
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 mb-3 d-flex align-items-stretch">
-            <div class="card">
-                <img src="{{ url_for('static', filename='img/products/needlee-v2.png') }}" class="card-img-top" alt="...">
-                <div class="card-body d-flex flex-column bg-dark">
-                    <h5 class="card-title text-light">Needlee-V2 (comming soon)</h5>
-                    <p class="standart-p card-text">Full autopilot AI driven VTOL drone for patrolling and human detection operations.</p>
-                    <ul style="color: white;">
-                        <li><p class="standart-p">Full autopilot</p></li>
-                        <li><p class="standart-p">Search & patrolling AI</p></li>
-                        <li><p class="standart-p">Operating: Web app</p></li>
-                        <li><p class="standart-p">Time in the air: 140min</p></li>
-                    </ul>
-                    <div class="d-grid gap-2 d-md-flex justify-content-center mt-auto">
-                        <a href="#" class="btn btn-outline-light">Specs</a>
-                    </div>
+        <div class="product-card" style="margin-right: 0px;">
+            <img src="{{ url_for('static', filename='img/products/needlee-v2.png') }}" alt="needlee-v2">
+            <div class="product-card-body">
+                <p class="large-p" style="margin: 0px;">Needlee-V2 (comming soon)</p>
+                <p class="standart-p">Full autopilot AI driven VTOL drone for patrolling and human detection operations.</p>
+                <ul>
+                    <li><p class="standart-p">Full autopilot</p></li>
+                    <li><p class="standart-p">Search & patrolling AI</p></li>
+                    <li><p class="standart-p">Operating: Web app</p></li>
+                    <li><p class="standart-p">Time in the air: 140min</p></li>
+                </ul>
+                <div>
+                    <a href="#" class="primary-light-button">Specs</a>
                 </div>
             </div>
         </div>
     </div>
-    <h2 class="text-light mb-5 mt-5">Workflow</h2>
-    <div class="d-flex flex-row mb-3 mt-3 justify-content-between">
-        <div class="card-25">
-            <img src="{{ url_for('static', filename='img/solution/web-app-1.png') }}" class="rounded img-fluid mb-3">
-            <div style="border-radius: 15px; border: 1px solid #4e4e4e; padding: 10px 20px;">
-                <p  class="standart-p" style="margin: 0px;">Pick the search area with a smartphone, Needlee will start an autonomous flight.</p>
+    <h2>Workflow</h2>
+    <p class="standart-p">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only.</p>
+    <div class="triple-group-container">
+        <div class="triple-group-element left">
+            <img src="{{ url_for('static', filename='img/solution/web-app-1.png') }}">
+            <div>
+                <p class="standart-p">Pick the search area with a smartphone, Needlee will start an autonomous flight.</p>
             </div>
         </div>
-        <div class="card-25">
-            <img src="{{ url_for('static', filename='img/solution/web-app-2.png') }}" class="rounded img-fluid mb-3">
-            <div style="border-radius: 15px; border: 1px solid #4e4e4e; padding: 10px 20px;">
-                <p class="standart-p" style="margin: 0px;">Watch live stream video while Needlee scans the area to detect people.</p>
+        <div class="triple-group-element center">
+            <img src="{{ url_for('static', filename='img/solution/web-app-2.png') }}">
+            <div>
+                <p class="standart-p">Watch live stream video while Needlee scans the area to detect people.</p>
             </div>
         </div>
-        <div class="card-25">
-            <img src="{{ url_for('static', filename='img/solution/web-app-3.png') }}" class="rounded img-fluid mb-3">
-            <div style="border-radius: 15px; border: 1px solid #4e4e4e; padding: 10px 20px;">
-                <p class="standart-p" style="margin: 0px;">Recieve HD images of search targets and send team to validated GPS coordinates.</p>
+        <div class="triple-group-element right">
+            <img src="{{ url_for('static', filename='img/solution/web-app-3.png') }}">
+            <div>
+                <p class="standart-p">Recieve HD images of search targets and send team to validated GPS coordinates.</p>
             </div>
         </div>
     </div>
-    
-    <h2 class="text-light mb-3 mt-5">Use cases</h2>
+    <h2>Use cases</h2>
     <p class="standart-p">
-        Needlee is focused on a single task to solve it perfectly: searching and detecting people. 
+        Needlee is focused on a single task to solve it perfectly: searching and detecting people.
         This approach allows the drone to distribute its resources efficiently, outperforming multi-mission UAVs.
     </p>
     <p class="standart-p">An ideal combination of hardware and software for human detection leads a fundamentally new level of search operations such as:</p>
-    <div class="d-flex flex-row mb-5 mt-5 justify-content-between">
-        <div class="card-25">
-            <img src="{{ url_for('static', filename='img/solution/case1.png') }}" class="rounded img-fluid mb-3">
-            <p class="standart-p text-center">
-                Ground rescue missions
-            </p>
+    <div class="triple-group-container">
+        <div class="triple-group-element left">
+            <img src="{{ url_for('static', filename='img/solution/case1.png') }}">
+            <div style="border-radius: 5px; margin: 2px 0px;">
+                <p class="standart-p">Ground rescue missions</p>
+            </div>
         </div>
-        <div class="card-25">
-            <img src="{{ url_for('static', filename='img/solution/case2.png') }}" class="rounded img-fluid mb-3">
-            <p class="standart-p text-center">
-                Maritime observing
-            </p>
+        <div class="triple-group-element center">
+            <img src="{{ url_for('static', filename='img/solution/case2.png') }}">
+            <div style="border-radius: 5px; margin: 2px 0px;">
+                <p class="standart-p">Maritime observing</p>
+            </div>
         </div>
-        <div class="card-25">
-            <img src="{{ url_for('static', filename='img/solution/case3.png') }}" class="rounded img-fluid mb-3">
-            <p class="standart-p text-center">
-                Border guarding
-            </p>
+        <div class="triple-group-element right">
+            <img src="{{ url_for('static', filename='img/solution/case3.png') }}">
+            <div style="border-radius: 5px; margin: 2px 0px;">
+                <p class="standart-p">Border guarding</p>
+            </div>
         </div>
     </div>
-
-    <h2 class="text-light mb-4 mt-5">Key features</h2>
+    <h2>Key features</h2>
     <div class="double-group-container">
         <div class="double-group-element">
             <img class="icon-60" src="{{ url_for('static', filename='img/solution/autopilot-icon.svg') }}">
-            <p class="standart-p" style="margin-bottom: 0px;">Full autopilot with AI human detection</p>
+            <p class="standart-p">Full autopilot with AI human detection</p>
         </div>
         <div class="double-group-element">
             <img class="icon-60" src="{{ url_for('static', filename='img/solution/app-icon.svg') }}">
-            <p class="standart-p" style="margin-bottom: 0px;">PC and smartphone user-friendly flight control</p>
+            <p class="standart-p">PC and smartphone user-friendly flight control</p>
         </div>
         <div class="double-group-element">
             <img class="icon-60" src="{{ url_for('static', filename='img/solution/stream-icon.svg') }}">
-            <p class="standart-p" style="margin-bottom: 0px;">Live HD video stream, low-light features</p>
+            <p class="standart-p">Live HD video stream, low-light features</p>
         </div>
         <div class="double-group-element">
             <img class="icon-60" src="{{ url_for('static', filename='img/solution/optional-features-icon.svg') }}">
-            <p class="standart-p" style="margin-bottom: 0px;">Optional LIDAR and thermovision features</p>
+            <p class="standart-p">Optional LIDAR and thermovision features</p>
         </div>
         <div class="double-group-element">
             <img class="icon-60" src="{{ url_for('static', filename='img/solution/radio-icon.svg') }}">
-            <p class="standart-p" style="margin-bottom: 0px;">Optional radio control</p>
+            <p class="standart-p">Optional radio control</p>
         </div>
         <div class="double-group-element">
             <img class="icon-60" src="{{ url_for('static', filename='img/solution/4g-icon.svg') }}">
-            <p class="standart-p" style="margin-bottom: 0px;">4G onboard internet</p>
+            <p class="standart-p">4G onboard internet</p>
         </div>
         <div class="double-group-element">
             <img class="icon-60" src="{{ url_for('static', filename='img/solution/manual-control-icon.svg') }}">
-            <p class="standart-p" style="margin-bottom: 0px;">Smart manual control mode</p>
+            <p class="standart-p">Smart manual control mode</p>
         </div>
         <div class="double-group-element">
             <img class="icon-60" src="{{ url_for('static', filename='img/solution/sos-icon.svg') }}">
-            <p class="standart-p" style="margin-bottom: 0px;">Emergency GPS signal</p>
+            <p class="standart-p">Emergency GPS signal</p>
         </div>
+    </div>
+    <h2>What's next?</h2>
+    <div style="margin-top: 30px;">
+        <a href="#" style="border-color: #A25252; margin-right: 10px;" class="primary-light-button small-button">Request Needlee V1 specifications PDF</a>
+        <a href="/contact" class="primary-light-button small-button">Contact Needlee team</a>
     </div>
 </div>

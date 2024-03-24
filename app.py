@@ -18,6 +18,11 @@ DRONES = {
     "UAV-0001": "1001"
 }
 
+header_style = {
+    "show": "display: inline; overflow: hidden;",
+    "hide": "display: none;"
+}
+
 class AppData:
     client = ""
     vehicle = ""
@@ -78,26 +83,26 @@ def stream(data):
     global appData
     frame = base64_resize(data["frame"], (data["shape"]["w"], data["shape"]["h"]))
     emit("update_vehicle", {"image": "data:image/jpeg;base64," + frame, "params": data["log"]}, room=appData.client)
-    
+
 @app.route("/")
 def home():
-    return render_template("index.html", section="home.html")
+    return render_template("index.html", section="home.html", header_style=header_style["show"])
 
 @app.route("/faq")
 def faq():
-    return render_template("index.html", section="faq.html")
+    return render_template("index.html", section="faq.html", header_style=header_style["hide"])
 
 @app.route("/contact")
 def contact():
-    return render_template("index.html", section="contact.html")
+    return render_template("index.html", section="contact.html", header_style=header_style["hide"])
 
 @app.route("/investors")
 def investors():
-    return render_template("index.html", section="investors.html")
+    return render_template("index.html", section="investors.html", header_style=header_style["show"])
 
 @app.route("/products")
 def products():
-    return render_template("index.html", section="products.html")
+    return render_template("index.html", section="products.html", header_style=header_style["hide"])
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
@@ -107,7 +112,7 @@ def login():
                 return render_template("console.html")
             else:
                 return render_template("login.html", login_status=False)
-        except:  
+        except:
             return render_template("login.html", login_status=False)
     else:
         return render_template("login.html", login_status=True)
@@ -118,5 +123,3 @@ def console():
 
 if __name__ == "__main__":
     socketio.run(app, debug=True, port=8080)
-
-

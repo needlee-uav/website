@@ -1,0 +1,24 @@
+<div id="content-container" style="max-width: 1000px;">
+    <div style="display: flex; margin-top: 40px;">
+        <img src="{{ url_for('static', filename='img/contact-map.png') }}" class="contact-map">
+        <div style="height: fit-content; margin: auto; margin-left: 40px;">
+            <h3 style="padding: 0px; margin: 0px;">Contact info</h3>
+            <p class="standart-p" style="max-width: 600px;">
+                contact@needlee.io
+            </p>
+            <hr style="color: #4E4E4E; margin-top: 30px;">
+            <h3 style="margin-top: 30px;">Request a video call</h3>
+            <p class="standart-p" style="max-width: 600px;">
+                Needlee team is opened for conversation to answer any questions you might have. We invite you to schedule a video call at a moment that suits you.
+            </p>
+            <div style="margin-top: 25px; margin-bottom: 15px;">
+                <a href="#" class="primary-light-button">Schedule a call</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+$(document).ready(function () {
+    document.getElementById("footer-block").style = "position: absolute; left: 50%; bottom: 0%; width: 100%; transform: translate(-50%, -0%);"
+});
+</script>
