@@ -79,6 +79,9 @@ h1 {
     font-size: 40px;
     color: #F8F9FA;
     margin-bottom: 24px!important;
+    @media (max-width:1000px) {
+        font-size: 28px;
+    }
 }
 
 h2 {
@@ -86,11 +89,17 @@ h2 {
     color: #F8F9FA;
     margin-top: 40px!important;
     margin-bottom: 24px!important;
+    @media (max-width:1000px) {
+        font-size: 24px;
+    }
 }
 
 h3 {
     font-size: 24px;
     color: #F8F9FA;
+    @media (max-width:1000px) {
+        font-size: 18px;
+    }
 }
 
 .standart-p {

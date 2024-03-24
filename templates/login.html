@@ -7,15 +7,15 @@
         <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
         <style>
             .html, body, .submit-container {
+                font-family: ubuntu;
                 background-color: #212529;
             }
-
         </style>
     </head>
     <body>
         <div id="back-button" onclick=back()>
             <div style="display: flex;">
-                <img src="{{ url_for('static', filename='img/back-icon.svg') }}" width="30px"><p>Back</p>
+                <img src="{{ url_for('static', filename='img/back-icon.svg') }}" width="30px"><p style="font-family: ubuntu;">Back</p>
             </div>
         </div>
         <div class="submit-container">
