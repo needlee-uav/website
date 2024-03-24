@@ -206,6 +206,11 @@ h3 {
         right: 13%;
         top: 10%;
     }
+    @media (max-width:1000px) {
+        width: 20%;
+        right: 10px;
+        top: 5%;
+    }
 }
 .human-container img {
     width: 100%;
