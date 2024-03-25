@@ -1,7 +1,7 @@
 <div id="content-container" style="max-width: 1000px;">
-    <div style="display: flex; margin-top: 40px;">
-        <img src="{{ url_for('static', filename='img/contact-map.png') }}" class="contact-map">
-        <div style="height: fit-content; margin: auto; margin-left: 40px;">
+    <div class="contact-info-holder">
+        <img src="{{ url_for('static', filename='img/contact-map.svg') }}" class="contact-map">
+        <div>
             <h3 style="padding: 0px; margin: 0px;">Contact info</h3>
             <p class="standart-p" style="max-width: 600px;">
                 contact@needlee.io
@@ -19,6 +19,17 @@
 </div>
 <script>
 $(document).ready(function () {
-    document.getElementById("footer-block").style = "position: absolute; left: 50%; bottom: 0%; width: 100%; transform: translate(-50%, -0%);"
+    resizeFooter()
+    window.addEventListener("resize", resizeFooter);
 });
+
+function resizeFooter() {
+    if(document.body.clientWidth < 450) {
+        document.getElementById("footer-block").style = "display: none;"
+    } else if (document.body.clientWidth < 700) {
+        document.getElementById("footer-block").style = "margin: 0 auto; max-width: 1300px;"
+    } else {
+        document.getElementById("footer-block").style = "position: absolute; left: 50%; bottom: 0%; width: 100%; transform: translate(-50%, -0%);"
+    }
+}
 </script>

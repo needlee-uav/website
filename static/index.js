@@ -25,15 +25,18 @@ function resizeFonts(class_id, size) {
 }
 
 function resizeContent() {
-    try {
-        if (document.getElementById("content-container").clientWidth <= 720) {
-            resizeFonts('standart-p', 14)
-            resizeFonts('large-p', 18)
-        } else {
-            resizeFonts('standart-p', 18)
-            resizeFonts('large-p', 24)
-        }
-    } catch {}
+    if(document.body.clientWidth < 450) {
+        document.getElementById("footer-block").style = "display: none;"
+    }
+    // try {
+    //     if (document.getElementById("content-container").clientWidth <= 720) {
+    //         resizeFonts('standart-p', 14)
+    //         resizeFonts('large-p', 18)
+    //     } else {
+    //         resizeFonts('standart-p', 18)
+    //         resizeFonts('large-p', 24)
+    //     }
+    // } catch {}
     collapseHeader()
 
 }

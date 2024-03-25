@@ -106,15 +106,34 @@ h3 {
     font-family: ubuntu;
     font-size: 20px;
     color: #E3E3E3;
+    @media (max-width:1000px) {
+        font-size: 16px;
+    }
 }
 .large-p {
     font-family: ubuntu;
     font-size: 24px;
     color: #E3E3E3;
+    @media (max-width:1000px) {
+        font-size: 20px;
+    }
 }
 .small-button {
     padding: 4px 20px!important;
+    margin-right: 10px;
     font-size: 18px;
+    @media (max-width:500px) {
+        font-size: 15px;
+    }
+}
+
+.small-button-holder {
+    margin-top: 30px;
+    margin-right: 10px;
+    display: flex;
+    @media (max-width:1000px) {
+        display: inline;
+    }
 }
 
 .primary-light-button {
@@ -174,6 +193,9 @@ h3 {
         .product-card-body ul {
             color: #F8F9FA;
             font-family: ubuntu;
+            @media (max-width:1000px) {
+                padding-left: 20px;
+            }
         }
             .product-card-body ul p {
                 color: #F8F9FA;
@@ -190,7 +212,7 @@ h3 {
     @media (max-width:1000px) {
         content: url(img/solution/header-image-sm.png);
     }
-    @media (max-width:500px) {
+    @media (max-width:700px) {
         content: url(img/solution/header-image-mobile.png);
     }
 }
@@ -206,7 +228,7 @@ h3 {
         right: 13%;
         top: 10%;
     }
-    @media (max-width:1000px) {
+    @media (max-width:700px) {
         width: 25%;
         right: 10px;
         top: 0%;
@@ -230,7 +252,7 @@ h3 {
         left: 0%;
         top: 3%;
     }
-    @media (max-width:500px) {
+    @media (max-width:700px) {
         width: 45%;
         left: 0%;
         top: 3%;
@@ -281,38 +303,74 @@ h3 {
     margin-top: 35px;
 }
 
-    .triple-group-element {
-        width: 25%;
+.triple-group-element {
+    width: 25%;
+
+}
+
+.left {
+    float:left;
+}
+.center {
+    display: inline-block;
+    margin:0 auto;
+
+}
+.right {
+    float:right;
+}
+
+.triple-group-element div {
+    border-radius: 15px;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #2E3135;
+    @media (max-width:1000px) {
+        padding: 10px 10px;
     }
 
-    .left {
-        float:left;
-    }
-    .center {
-        display: inline-block;
-        margin:0 auto;
-    }
-    .right {
-        float:right;
-    }
+}
 
-    .triple-group-element div {
-        border-radius: 15px;
-        padding: 10px 20px;
-        margin: 10px;
-        background-color: #2E3135;
-    }
+.triple-group-element img{
+    width: 100%;
+    border-radius: 5px;
 
-    .triple-group-element img{
-        width: 100%;
-        border-radius: 5px;
-    }
+}
 
-    .triple-group-element p {
-        margin: 0px;
-        width: 100%;
-        text-align: center;
+.triple-group-element p {
+    margin: 0px;
+    width: 100%;
+    text-align: center;
+}
+
+.resize-group-element {
+    @media (max-width:720px) {
+        display: flex!important;
+        width: 100%!important;
+        margin-bottom: 20px!important;
     }
+}
+
+
+.resize-group-element div {
+    border-radius: 15px!important;
+    padding: 10px 20px!important;
+    margin: 10px!important;
+    @media (max-width:1000px) {
+        padding: 10px 10px;
+    }
+    @media (max-width:720px) {
+        margin: auto!important;
+        width: 30%!important;
+    }
+}
+
+.resize-group-element img {
+    @media (max-width:720px) {
+                float: left;
+                width: 50%;
+            }
+}
 
 /* FAQ */
 details{
@@ -522,11 +580,6 @@ table, th, td {
     font-weight: 700;
     margin-bottom: 0px;
 }
-.contact-map {
-    border-radius: 5px;
-    width: 350px;
-    height: 350px;
-}
 
 .submit-container {
     height: 100%;
@@ -601,4 +654,37 @@ table, th, td {
     margin-left: 10px;
     color: white;
     font-family: ubuntu;
+}
+
+.contact-info-holder {
+    display: flex;
+    margin-top: 40px;
+    @media (max-width:700px) {
+        margin-top: 10px;
+        display: block;
+    };
+}
+.contact-info-holder img {
+    border-radius: 5px;
+    width: 350px;
+    height: 350px;
+    @media (max-width:700px) {
+        margin: 5%;
+        height: auto;
+        width: 90%;
+    };
+}
+.contact-info-holder div {
+    height: fit-content;
+    margin: auto;
+    margin-left: 40px;
+    @media (max-width:700px) {
+        margin-left: 5%;
+
+    };
+}
+.contact-info-holder div div {
+    margin: 0px;
+    margin-top: 25px;
+    margin-bottom: 15px;
 }

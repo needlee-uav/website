@@ -38,20 +38,20 @@
     <h2>Workflow</h2>
     <p class="standart-p">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only.</p>
     <div class="triple-group-container">
-        <div class="triple-group-element left">
-            <img src="{{ url_for('static', filename='img/solution/web-app-1.png') }}">
+        <div class="triple-group-element left resize-group-element">
+            <img src="{{ url_for('static', filename='img/solution/web-app-1.svg') }}">
             <div>
                 <p class="standart-p">Pick the search area with a smartphone, Needlee will start an autonomous flight.</p>
             </div>
         </div>
-        <div class="triple-group-element center">
-            <img src="{{ url_for('static', filename='img/solution/web-app-2.png') }}">
+        <div class="triple-group-element center resize-group-element">
+            <img src="{{ url_for('static', filename='img/solution/web-app-2.svg') }}">
             <div>
                 <p class="standart-p">Watch live stream video while Needlee scans the area to detect people.</p>
             </div>
         </div>
-        <div class="triple-group-element right">
-            <img src="{{ url_for('static', filename='img/solution/web-app-3.png') }}">
+        <div class="triple-group-element right resize-group-element">
+            <img src="{{ url_for('static', filename='img/solution/web-app-3.svg') }}">
             <div>
                 <p class="standart-p">Recieve HD images of search targets and send team to validated GPS coordinates.</p>
             </div>
@@ -67,7 +67,7 @@
         <div class="triple-group-element left">
             <img src="{{ url_for('static', filename='img/solution/case1.png') }}">
             <div style="border-radius: 5px; margin: 2px 0px;">
-                <p class="standart-p">Ground rescue missions</p>
+                <p class="standart-p">Rescue missions</p>
             </div>
         </div>
         <div class="triple-group-element center">
@@ -119,8 +119,12 @@
         </div>
     </div>
     <h2>What's next?</h2>
-    <div style="margin-top: 30px;">
-        <a href="#" style="border-color: #A25252; margin-right: 10px;" class="primary-light-button small-button">Request Needlee V1 specifications PDF</a>
-        <a href="/contact" class="primary-light-button small-button">Contact Needlee team</a>
+    <div class="small-button-holder">
+        <div style="margin-bottom: 20px; width: fit-content;">
+            <a href="#" style="border-color: #A25252;" class="primary-light-button small-button">Request Needlee V1 specifications PDF</a>
+        </div>
+        <div style="margin-bottom: 20px; width: fit-content;">
+            <a href="/contact" class="primary-light-button small-button">Contact Needlee team</a>
+        </div>
     </div>
 </div>
