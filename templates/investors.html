@@ -12,14 +12,14 @@
             <hr class="market-value-hr" style="top: 45%;">
             <hr class="market-value-hr" style="top: 75%;">
             <p class="large-p market-data market-type tam" style="margin: 0px;">TAM</p>
-            <p class="large-p market-data market-type sam" style="margin: 0px;">SAM</p>
+            <p class="large-p market-data market-type sam market-type-sam-offset" style="margin: 0px;">SAM</p>
             <p class="large-p market-data market-type som" style="margin: 0px;">SOM</p>
-            <p class="standart-p market-data tam" style="margin: 0px; padding-top: 3px;">Global drone market by 2024</p>
-            <p class="standart-p market-data sam" style="margin: 0px; padding-top: 3px;">Search & Rescue drone market where 95% of sales made with basic FPV drones</p>
-            <p class="standart-p market-data som" style="margin: 0px; padding-top: 3px;">Total annual drone budget of rescue teams in EU searching for a smart UAV solution</p>
+            <p class="standart-p market-data market-info tam" style="margin: 0px; padding-top: 3px;">Global drone market by 2024</p>
+            <p class="standart-p market-data market-info sam" style="margin: 0px; padding-top: 3px;">Search & Rescue drone market where 95% of sales made with basic FPV drones</p>
+            <p class="standart-p market-data market-info som" style="margin: 0px; padding-top: 3px;">Total annual drone budget of rescue teams in EU searching for a smart UAV solution</p>
         </div>
     </div>
-    <ul style="color: white;">
+    <ul class="market-bullets" style="color: white;">
         <li>
             <p class="standart-p">Autonomous drone market holds more than 40% of the global drone market and grows 25% a year.</p>
         </li>
@@ -84,26 +84,26 @@
         </tr>
     </table>
     <h2>Roadmap</h2>
-    <div style="position: relative; height: 450px;">
-        <hr style="border: none; height: 5px; background: linear-gradient(to right, #A25252, #C19D9D); opacity: 1; margin: 0px; width: 100%; position: absolute; right: 0%; top: 50%; transform: translate(-0%, -50%);">
+    <div class="roadpoint-container">
+        <hr>
         <div class="roadpoint" style="background: linear-gradient(to right, #A25252, #A16969)">
             <p class="roadpoint-year">2024</p>
             <div class="roadpoint-dashed"></div>
             <div class="roadpoint-sm-cl"></div>
             <div class="roadpoint-marker">
-                <img src="{{ url_for('static', filename='img/pitch/roadmap-marker.svg') }}" class="rounded img-fluid">
+                <img src="{{ url_for('static', filename='img/pitch/roadmap-marker.svg') }}">
                 <p class="roadpoint-q">Q1</p>
                 <p class="roadpoint-name">Needlee V1 prototype</p>
             </div>
         </div>
 
-        <div class="roadpoint" style="left: 18%; background: linear-gradient(to right, #8F5858, #9E7373)">
-            <div class="roadpoint-dashed" style="top: 30px;"></div>
-            <div class="roadpoint-sm-cl" style="top: 110px;"></div>
-            <div class="roadpoint-marker" style="top: 170px; transform: rotate(180deg) translate(50%, 50%);">
-                <img src="{{ url_for('static', filename='img/pitch/roadmap-marker.svg') }}" class="rounded img-fluid">
-                <p class="roadpoint-q" style="transform: rotate(180deg) translate(50%, 50%);">Q2</p>
-                <p class="roadpoint-name" style="left: -180%; transform: rotate(180deg) translate(50%, 50%);">Alpha testing</p>
+        <div class="roadpoint roadpoint-bottom" style="left: 18%; background: linear-gradient(to right, #8F5858, #9E7373)">
+            <div class="roadpoint-dashed"></div>
+            <div class="roadpoint-sm-cl"></div>
+            <div class="roadpoint-marker">
+                <img src="{{ url_for('static', filename='img/pitch/roadmap-marker.svg') }}">
+                <p class="roadpoint-q">Q2</p>
+                <p class="roadpoint-name">Alpha testing</p>
             </div>
         </div>
 
@@ -111,19 +111,19 @@
             <div class="roadpoint-dashed"></div>
             <div class="roadpoint-sm-cl"></div>
             <div class="roadpoint-marker">
-                <img src="{{ url_for('static', filename='img/pitch/roadmap-marker.svg') }}" class="rounded img-fluid">
+                <img src="{{ url_for('static', filename='img/pitch/roadmap-marker.svg') }}">
                 <p class="roadpoint-q">Q3</p>
                 <p class="roadpoint-name">Beta testing</p>
             </div>
         </div>
 
-        <div class="roadpoint" style="left: 44%;">
-            <div class="roadpoint-dashed" style="top: 30px;"></div>
-            <div class="roadpoint-sm-cl" style="top: 110px;"></div>
-            <div class="roadpoint-marker" style="top: 170px; transform: rotate(180deg) translate(50%, 50%);">
-                <img src="{{ url_for('static', filename='img/pitch/roadmap-marker.svg') }}" class="rounded img-fluid">
-                <p class="roadpoint-q" style="transform: rotate(180deg) translate(50%, 50%);">Q4</p>
-                <p class="roadpoint-name" style="left: -180%; transform: rotate(180deg) translate(50%, 50%);">Test focus group</p>
+        <div class="roadpoint roadpoint-bottom" style="left: 44%;">
+            <div class="roadpoint-dashed"></div>
+            <div class="roadpoint-sm-cl"></div>
+            <div class="roadpoint-marker">
+                <img src="{{ url_for('static', filename='img/pitch/roadmap-marker.svg') }}">
+                <p class="roadpoint-q">Q4</p>
+                <p class="roadpoint-name">Test focus group</p>
             </div>
         </div>
 
@@ -132,19 +132,19 @@
             <div class="roadpoint-dashed"></div>
             <div class="roadpoint-sm-cl"></div>
             <div class="roadpoint-marker">
-                <img src="{{ url_for('static', filename='img/pitch/roadmap-marker.svg') }}" class="rounded img-fluid">
+                <img src="{{ url_for('static', filename='img/pitch/roadmap-marker.svg') }}">
                 <p class="roadpoint-q">Q1</p>
                 <p class="roadpoint-name">First customers</p>
             </div>
         </div>
 
-        <div class="roadpoint" style="left: 70%;">
-            <div class="roadpoint-dashed" style="top: 30px;"></div>
-            <div class="roadpoint-sm-cl" style="top: 110px;"></div>
-            <div class="roadpoint-marker" style="top: 170px; transform: rotate(180deg) translate(50%, 50%);">
-                <img src="{{ url_for('static', filename='img/pitch/roadmap-marker.svg') }}" class="rounded img-fluid">
-                <p class="roadpoint-q" style="transform: rotate(180deg) translate(50%, 50%);">Q4</p>
-                <p class="roadpoint-name" style="width: 220px; left: -220%; transform: rotate(180deg) translate(50%, 50%);">50 Needlee V1 items sold</p>
+        <div class="roadpoint roadpoint-bottom" style="left: 70%;">
+            <div class="roadpoint-dashed"></div>
+            <div class="roadpoint-sm-cl"></div>
+            <div class="roadpoint-marker">
+                <img src="{{ url_for('static', filename='img/pitch/roadmap-marker.svg') }}">
+                <p class="roadpoint-q">Q4</p>
+                <p class="roadpoint-name roadpoint-name-long">50 Needlee V1 items sold</p>
             </div>
         </div>
 
@@ -153,7 +153,7 @@
             <div class="roadpoint-dashed"></div>
             <div class="roadpoint-sm-cl"></div>
             <div class="roadpoint-marker">
-                <img src="{{ url_for('static', filename='img/pitch/roadmap-marker.svg') }}" class="rounded img-fluid">
+                <img src="{{ url_for('static', filename='img/pitch/roadmap-marker.svg') }}">
                 <p class="roadpoint-q">Q1</p>
                 <p class="roadpoint-name">Needlee V2 prototype</p>
             </div>
@@ -163,29 +163,29 @@
     <p class="standart-p">By the end of the year 2025 50 items will be sold, and our team will be ready for a second round of investment to modernize technology and production and build a VTOL Needlee V2 drone to cover much more complex mission like border guarding.</p>
 
     <h2>Team</h2>
-    <div class="triple-group-container" style="overflow: hidden;">
-        <div class="triple-group-element left">
+    <div class="triple-group-container">
+        <div class="triple-group-element left resize-group-element team-member">
             <img src="{{ url_for('static', filename='img/pitch/team-stepan.png') }}">
-            <div style="border-radius: 15px; padding: 10px 20px; margin: 10px; background-color: #2E3135;">
-                <p class="standart-p" style="margin: 0px;">
+            <div>
+                <p class="standart-p">
                     Stepan Kolodiazhny<br><b>Founder, CEO</b><br><br>
                     Tech Manager with CEO experience, UAV and software development skills
                 </p>
             </div>
         </div>
-        <div class="triple-group-element center">
+        <div class="triple-group-element center resize-group-element team-member">
             <img src="{{ url_for('static', filename='img/pitch/team-viktor.png') }}">
-            <div style="border-radius: 15px; padding: 10px 20px; margin: 10px; background-color: #2E3135;">
-                <p class="standart-p" style="margin: 0px;">
+            <div>
+                <p class="standart-p">
                     Viktor Uimanov<br><b>Co-Founder, CPO</b><br><br>
                     Product Owner experienced with AI products and software development skills
                 </p>
             </div>
         </div>
-        <div class="triple-group-element right">
+        <div class="triple-group-element right resize-group-element team-member">
             <img src="{{ url_for('static', filename='img/pitch/team-alexander.png') }}">
-            <div style="border-radius: 15px; padding: 10px 20px; margin: 10px; background-color: #2E3135;">
-                <p class="standart-p" style="margin: 0px;">
+            <div>
+                <p class="standart-p">
                     Aleksandr Razin<br><b>Co-Founder, CTO</b><br><br>
                     Computer Vision engineer specialized in robotics and image optimization
                 </p>

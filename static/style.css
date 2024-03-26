@@ -7,7 +7,14 @@ body {
 .content-container {
     margin: 0 auto;
     max-width: 1300px;
-    /* @media (min-width:1290px) { width: 1200px!important; }  */
+    @media (max-width:1400px) {
+        margin-left: 50px!important;
+        margin-right: 50px!important;
+    }
+    @media (max-width:720px) {
+        margin-left: 0px!important;
+        margin-right: 0px!important;
+    }
 }
 
 .header-container ul {
@@ -328,13 +335,11 @@ h3 {
     @media (max-width:1000px) {
         padding: 10px 10px;
     }
-
 }
 
 .triple-group-element img{
     width: 100%;
     border-radius: 5px;
-
 }
 
 .triple-group-element p {
@@ -367,9 +372,31 @@ h3 {
 
 .resize-group-element img {
     @media (max-width:720px) {
-                float: left;
-                width: 50%;
-            }
+        float: left;
+        width: 50%;
+    }
+}
+
+.team-member img {
+    @media (max-width:720px) {
+        width: 25%!important;
+        height: 25%!important;
+    }
+    @media (max-width:450px) {
+        width: 35%!important;
+        height: 35%!important;
+    }
+}
+
+.team-member div {
+    @media (max-width:720px) {
+        width: 60%!important;
+    }
+    @media (max-width:450px) {
+        display: inline-block!important;
+        margin:0 auto!important;
+        width: 50%!important;
+    }
 }
 
 /* FAQ */
@@ -418,6 +445,32 @@ table, th, td {
     border-collapse: collapse;
 }
 
+.roadpoint-container {
+    position: relative;
+    height: 450px;
+    @media (max-width:720px) {
+        height: 370px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}
+
+.roadpoint-container hr {
+    border: none;
+    height: 5px;
+    background: linear-gradient(to right, #A25252, #C19D9D);
+    opacity: 1;
+    margin: 0px;
+    width: 100%;
+    position: absolute;
+    right: 0%;
+    top: 50%;
+    transform: translate(-0%, -50%);
+    @media (max-width:720px) {
+        height: 2px;
+    }
+}
+
 .roadpoint {
     background-color: white;
     border-radius: 100%;
@@ -427,6 +480,46 @@ table, th, td {
     left: 5%;
     top: 50%;
     transform: translate(-50%, -50%);
+    @media (max-width:720px) {
+        width: 14px;
+        height: 14px;
+    }
+}
+
+.roadpoint-bottom .roadpoint-dashed{
+    top: 30px;
+    @media (max-width:720px) {
+        top: 17px;
+    }
+}
+.roadpoint-bottom .roadpoint-sm-cl{
+    top: 110px;
+    @media (max-width:720px) {
+        top: 60px;
+    }
+}
+.roadpoint-bottom .roadpoint-marker{
+    top: 170px;
+    transform: rotate(180deg)
+    translate(50%, 50%);
+    @media (max-width:720px) {
+        top: 98px;
+    }
+}
+.roadpoint-bottom .roadpoint-marker .roadpoint-q {
+    transform: rotate(180deg) translate(50%, 50%);
+}
+.roadpoint-bottom .roadpoint-marker .roadpoint-name {
+    left: -180%;
+    transform: rotate(180deg) translate(50%, 50%);
+    @media (max-width:1000px) {
+        left: -45px;
+    }
+    @media (max-width:720px) {
+        width: 75px;
+        top: -25px;
+        left: 5px;
+    }
 }
 
 .roadpoint-year {
@@ -438,15 +531,26 @@ table, th, td {
     left: 250%;
     top: -40%;
     transform: translate(-50%, -50%);
+    @media (max-width:720px) {
+        font-size: 16px;
+        top: -70%;
+    }
 }
 
 .roadpoint-dashed {
-    border-left: 6px dotted white;
-    width: 0px;
+    background-image: url('data:image/svg+xml;utf8,<svg width="6" height="70" viewBox="0 0 6 70" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="3" cy="8" r="3" fill="white"/><circle cx="3" cy="19" r="3" fill="white"/><circle cx="3" cy="30" r="3" fill="white"/><circle cx="3" cy="41" r="3" fill="white"/><circle cx="3" cy="52" r="3" fill="white"/><circle cx="3" cy="63" r="3" fill="white"/></svg>');
+    width: 6px;
     height: 70px;
     position: absolute;
-    left: 12px;
+    left: 50%;
+    transform: translate(-50%, -0%);
     top: -70px;
+    @media (max-width:720px) {
+        background-image: url('data:image/svg+xml;utf8,<svg width="4" height="35" viewBox="0 0 4 35" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="2" fill="white"/><circle cx="2" cy="8" r="2" fill="white"/><circle cx="2" cy="14" r="2" fill="white"/><circle cx="2" cy="20" r="2" fill="white"/><circle cx="2" cy="26" r="2" fill="white"/><circle cx="2" cy="32" r="2" fill="white"/></svg>');
+        width: 4px;
+        height: 35px;
+        top: -37px;
+    }
 }
 
 .roadpoint-sm-cl {
@@ -458,6 +562,11 @@ table, th, td {
     left: 50%;
     top: -80px;
     transform: translate(-50%, -50%);
+    @media (max-width:720px) {
+        width: 8px;
+        height: 8px;
+        top: -46px;
+    }
 }
 
 .roadpoint-marker {
@@ -466,7 +575,17 @@ table, th, td {
     left: 50%;
     top: -140px;
     transform: translate(-50%, -50%);
+    @media (max-width:720px) {
+        width: 40px;
+        top: -84px;
+    }
 }
+
+    .roadpoint-marker img {
+        @media (max-width:720px) {
+            width: 40px;
+        }
+    }
 
 .roadpoint-q {
     margin: 0px;
@@ -477,6 +596,9 @@ table, th, td {
     left: 50%;
     top: 40%;
     transform: translate(-50%, -50%);
+    @media (max-width:720px) {
+        font-size: 18px;
+    }
 }
 
 .roadpoint-name {
@@ -489,6 +611,27 @@ table, th, td {
     text-align: left;
     left: 160px;
     top: 40%; transform: translate(-50%, -50%);
+    @media (max-width:1000px) {
+        font-size: 14px;
+        left: 105px;
+        max-width: 75px;
+    }
+    @media (max-width:720px) {
+        width: 75px;
+        top: -25px;
+        left: 35px;
+    }
+}
+
+.roadpoint-name-long {
+    min-width: 100px;
+    @media (max-width:1000px) {
+        left: -58px!important;
+    }
+    @media (max-width:720px) {
+        left: -10px!important;
+    }
+
 }
 
 .market-data {
@@ -511,16 +654,58 @@ table, th, td {
     }
 }
 
+.market-info {
+    @media (max-width: 650px) {
+        font-size: 15px!important;
+    }
+    @media (max-width: 550px) {
+        font-size: 14px!important;
+    }
+    @media (max-width: 450px) {
+        left: 35px!important;
+    }
+}
+
 .tam {
     top: 18%;
+    @media (max-width: 650px) {
+        top: 10%;
+    }
+    @media (max-width: 450px) {
+        left: -10px;
+        top: 0%;
+        font-size: 16px;
+    }
 }
 
 .sam {
     top: 45%;
+    @media (max-width: 450px) {
+        left: -10px;
+        top: 40%;
+        font-size: 16px;
+    }
 }
 
 .som {
     top: 75%;
+    @media (max-width: 650px) {
+        top: 85%;
+    }
+    @media (max-width: 450px) {
+        left: -10px;
+        top: 95%;
+        font-size: 16px;
+    }
+}
+
+.market-bullets {
+    @media (max-width: 650px) {
+        margin-top: 40px;
+    }
+    @media (max-width: 450px) {
+        margin-top: 60px;
+    }
 }
 
 .team-member-info {
@@ -545,6 +730,9 @@ table, th, td {
     left: 50%;
     top: 18%;
     transform: translate(-50%, -50%);
+    @media (max-width: 1000px) {
+        font-size: 16px;
+    }
 }
 .market-value-hr {
     margin: 0px;
@@ -554,7 +742,52 @@ table, th, td {
     border-top: 2px dotted white;
     position: absolute;
     left: -14%;
+    @media (max-width: 1000px) {
+        width: 15%;
+    }
+    @media (max-width: 800px) {
+        left: -11%;
+        width: 12%;
+    }
 }
+
+.market-value-hr:first-child {
+    @media (max-width: 650px) {
+        transform: rotate(-12deg);
+        top: 14%!important;
+    }
+    @media (max-width: 450px) {
+        transform: rotate(-30deg);
+        left: -17%;
+        top: 8%!important;
+    }
+}
+.market-value-hr:nth-child(2){
+    @media (max-width: 450px) {
+        transform: rotate(-27deg);
+        left: -16%;
+        top: 36%!important;
+    }
+}
+.market-value-hr:nth-child(3){
+    @media (max-width: 650px) {
+        transform: rotate(15deg);
+        top: 80%!important;
+    }
+    @media (max-width: 450px) {
+        transform: rotate(30deg);
+        left: -17%;
+        top: 88%!important;
+    }
+}
+
+.market-type-sam-offset {
+    @media (max-width: 450px) {
+        top: 30%!important;
+        left: -5px;
+    }
+}
+
 .quality-list {
     height: 60px;
     text-align: end;
