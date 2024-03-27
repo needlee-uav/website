@@ -424,8 +424,13 @@ summary:after{
 }
 
 details[open] summary {
+    color: #C19D9D;
     border-bottom: 1px solid #4E4E4E;
     margin-bottom: 15px;
+}
+
+details[open] summary p {
+    color: #C19D9D;
 }
 
 details[open] summary:after{

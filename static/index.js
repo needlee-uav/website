@@ -105,5 +105,13 @@ function showMobileMenu() {
         document.getElementById("header-image-container").style.filter = "brightness(50%)"
         document.getElementById("mobile-menu-icon").src = document.getElementById("mobile-menu-icon").src.toString().replace("-icon", "-icon-close")
     }
+}
 
+function handleHash() {
+    const hash  = new URL(document.URL).hash
+    if(hash.length > 0) {
+        const el = document.getElementById("faq-" + hash.toString().replace("#", ""))
+        el.open = true
+        el.scrollIntoView({block: "start"});
+    }
 }
