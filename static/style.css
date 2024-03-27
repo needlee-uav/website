@@ -293,6 +293,12 @@ h3 {
     margin: 0px;
 }
 
+#needlee-v1-logo {
+    @media (max-width:850px) {
+        content: url(img/needlee-v1-logo-mobile.svg);
+    }
+}
+
 .icon-60 {
     margin-right: 20px;
     height: 45px;
