@@ -658,54 +658,17 @@ table, th, td {
     @media (max-width: 650px) {
         font-size: 15px!important;
     }
-    @media (max-width: 550px) {
-        font-size: 14px!important;
-    }
-    @media (max-width: 450px) {
-        left: 35px!important;
-    }
 }
 
 .tam {
     top: 18%;
-    @media (max-width: 650px) {
-        top: 10%;
-    }
-    @media (max-width: 450px) {
-        left: -10px;
-        top: 0%;
-        font-size: 16px;
-    }
 }
-
 .sam {
     top: 45%;
-    @media (max-width: 450px) {
-        left: -10px;
-        top: 40%;
-        font-size: 16px;
-    }
 }
 
 .som {
     top: 75%;
-    @media (max-width: 650px) {
-        top: 85%;
-    }
-    @media (max-width: 450px) {
-        left: -10px;
-        top: 95%;
-        font-size: 16px;
-    }
-}
-
-.market-bullets {
-    @media (max-width: 650px) {
-        margin-top: 40px;
-    }
-    @media (max-width: 450px) {
-        margin-top: 60px;
-    }
 }
 
 .team-member-info {
@@ -748,43 +711,6 @@ table, th, td {
     @media (max-width: 800px) {
         left: -11%;
         width: 12%;
-    }
-}
-
-.market-value-hr:first-child {
-    @media (max-width: 650px) {
-        transform: rotate(-12deg);
-        top: 14%!important;
-    }
-    @media (max-width: 450px) {
-        transform: rotate(-30deg);
-        left: -17%;
-        top: 8%!important;
-    }
-}
-.market-value-hr:nth-child(2){
-    @media (max-width: 450px) {
-        transform: rotate(-27deg);
-        left: -16%;
-        top: 36%!important;
-    }
-}
-.market-value-hr:nth-child(3){
-    @media (max-width: 650px) {
-        transform: rotate(15deg);
-        top: 80%!important;
-    }
-    @media (max-width: 450px) {
-        transform: rotate(30deg);
-        left: -17%;
-        top: 88%!important;
-    }
-}
-
-.market-type-sam-offset {
-    @media (max-width: 450px) {
-        top: 30%!important;
-        left: -5px;
     }
 }
 
