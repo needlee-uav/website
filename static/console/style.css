@@ -1,52 +1,225 @@
-.Row {
-    display: table;
-    width: 100%; /*Optional*/
-    table-layout: fixed; /*Optional*/
-    border-spacing: 10px; /*Optional*/
+#log {
+  padding: 10px;
+  width: 320px;
+  background-color: #212529;
+  color: azure;
+  overflow-y: scroll;
 }
-.Column {
-    display: table-cell;
+.log-line {
+  font-size: 16px;
 }
+
 #video {
     transform: rotateY(180deg);
     -webkit-transform:rotateY(180deg); /* Safari and Chrome */
     -moz-transform:rotateY(180deg); /* Firefox */
-  }
-  body {
-    padding: 0;
-    margin: 0;
-    color: #dad6d6 !important;
-    background: #f7f7f7;
-    background: -webkit-linear-gradient(to right, #322A2A, #211C1C);
-    background: linear-gradient(to right, #322A2A, #211C1C);
-  }
+}
+body {
+  padding: 0;
+  margin: 0;
+  background: #f7f7f7;
+  background: -webkit-linear-gradient(to right, #322A2A, #211C1C);
+  background: linear-gradient(to right, #322A2A, #211C1C);
+}
 
-  html, body, #map {
-    height: 100%;
-    width: 100vw;
-  }
+html, body, #map {
+  height: 100%;
+  width: 100vw;
+}
 
-  #map {
-    position: relative;
-    z-index: 10;
-  }
+#map {
+  position: relative;
+  z-index: 10;
+}
 
-  #overlay {
-    position: absolute;
-    z-index: 1;
-  }
+#overlay {
+  position: absolute;
+  z-index: 1;
+}
 
-  #attitude-dir-box {
-    border-radius: 29px;
-    background: linear-gradient(
-      #6699FF 0%,
-      #6699FF 50%,
-      #996600 50%,
-      #996600 100%
-    );
-  }
+#attitude-dir-box {
+  border-radius: 29px;
+  background: linear-gradient(
+    #6883DB 0%,
+    #6883DB 50%,
+    #937676 50%,
+    #937676 100%
+  );
+}
 
 
 h5 {
   margin-bottom: 4px;
+}
+
+.button-sm-icon {
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+  margin: 0px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: #444444;
+  border:1px solid #777777;
+}
+
+.button-sm-icon:hover {
+  background-color: #555555;
+}
+
+#main-button {
+  cursor: pointer;
+  text-align: center;
+  min-width: 100px;
+  font-size: 18px;
+  border-radius: 5px;
+  padding: 10px 20px;
+  border:1px solid #B93D3D;
+}
+
+#main-button:hover {
+  background-color: #444444;
+}
+
+.param-box {
+  height: fit-content;
+}
+
+p {
+  margin: 0px;
+  font-family: ubuntu;
+  color: white;
+}
+
+.param-name {
+  font-size: 14px;
+  font-weight: 200;
+}
+
+.param-value {
+  margin-top: -2px;
+  font-size: 20px;
+}
+
+.holder{
+  overflow: hidden;
+  color: white;
+  background-color: #212529;
+}
+
+/* .badge {
+  font-family: ubuntu;
+  font-size: 15px;
+  color: #F8F9FA;
+  background-color: #212529;
+  padding: 10px;
+  border-radius: 10px;
+} */
+
+#control-buttons-holder {
+  position: absolute;
+  top: 100px;
+  left: 25px;
+  display: flex;
+  float: left;
+  gap: 25px;
+}
+
+.settings-holder {
+  z-index: 10;
+  font-family: ubuntu;
+  font-size: 18px;
+  border-radius: 5px;
+  position: absolute;
+  top: 140px;
+  left: 25px;
+  width: 229px;
+  height: fit-content;
+  background-color: #212529;
+  border: 1px solid #555555;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 37px;
+  height: 22px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+input:checked + .slider {
+  background-color: #47B93D;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #47B93D;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(15px);
+  -ms-transform: translateX(15px);
+  transform: translateX(15px);
+}
+
+.slider.round {
+  border-radius: 20px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+#test-mode-options p:hover {
+  font-weight: 400;
+}
+#param-container {
+  display: flex;
+  float: left;
+  margin-left: 25px;
+  gap: 20px;
+  align-items: center;
+}
+#attitude-dir-holder {
+  margin: auto;
+  height: 120px;
+  display: flex;
+  align-items: center;
+}
+#main-button-box {
+  margin-left: auto;
+  margin-right: 25px;
+  height: 120px;
+  display: flex;
+  align-items: center;
 }

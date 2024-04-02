@@ -24,6 +24,7 @@ header_style = {
 }
 
 class AppData:
+    debug = []
     client = ""
     vehicle = ""
     marker = {"lat": 0, "lon": 0, "alt": 0}
@@ -57,6 +58,10 @@ def ready(data):
         print(data)
         emit("ready", data, room=appData.vehicle)
 
+@socketio.on("emergency")
+def emergency(data):
+    emit("emergency", data, room=appData.vehicle)
+
 @socketio.on("vehicle_sign_in")
 def vehicle_sign_in(data):
     if data["id"] in DRONES.keys():
@@ -81,8 +86,12 @@ def base64_resize(base64_string, shape):
 @socketio.on("stream")
 def stream(data):
     global appData
+    if data["debug"] != "":
+        # Refresh log
+        if(data["debug"] == "LOGGER: log OK"): appData.debug = []
+        appData.debug.append(data["debug"])
     frame = base64_resize(data["frame"], (data["shape"]["w"], data["shape"]["h"]))
-    emit("update_vehicle", {"image": "data:image/jpeg;base64," + frame, "params": data["log"]}, room=appData.client)
+    emit("update_vehicle", {"image": "data:image/jpeg;base64," + frame, "params": data["log"], "debug": data["debug"]}, room=appData.client)
 
 @app.route("/")
 def home():
@@ -119,7 +128,7 @@ def login():
 
 @app.route("/console")
 def console():
-    return render_template("console.html")
+    return render_template("console.html", debug_data = appData.debug)
 
 if __name__ == "__main__":
     socketio.run(app, debug=True, port=8080)

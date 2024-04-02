@@ -28,8 +28,8 @@ function addNavPoint(coords) {
     }
     if (GPS_POINTS.length < GPS_POINT_ICONS.length) {
         GPS_POINTS.push(new Point(
-            GPS_POINT_ICONS[GPS_POINTS.length], 
-            coords, 
+            GPS_POINT_ICONS[GPS_POINTS.length],
+            coords,
             new L.Marker(coords, {
                 icon: new LeafIconNum({
                     iconUrl: GPS_POINT_ICONS[GPS_POINTS.length]
@@ -41,8 +41,8 @@ function addNavPoint(coords) {
         map.removeLayer(GPS_POINTS[0].map_point);
         GPS_POINTS.shift();
         GPS_POINTS.push(new Point(
-            GPS_POINT_ICONS[0], 
-            coords, 
+            GPS_POINT_ICONS[0],
+            coords,
             new L.Marker(coords, {
                 icon: new LeafIconNum({
                     iconUrl: GPS_POINT_ICONS[0]
@@ -116,9 +116,9 @@ function gpsValidateDistance(lat1, lon1, lat2, lon2) {
 }
 
 map.on("click", (event)=> {
-    if (pickPoints && window.document.body.scrollHeight - event.containerPoint.y > 70) {
+    if (pickPoints && event.containerPoint.y > 100) {
         if (gpsValidateDistance(homeCoords[0], homeCoords[1], event.latlng.lat , event.latlng.lng)) {
             addNavPoint([event.latlng.lat , event.latlng.lng]);
-        } 
+        }
     }
 })

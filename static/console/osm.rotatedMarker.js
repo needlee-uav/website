@@ -1,5 +1,4 @@
 (function() {
-    // save these original methods before they are overwritten
     var proto_initIcon = L.Marker.prototype._initIcon;
     var proto_setPos = L.Marker.prototype._setPos;
 
@@ -14,7 +13,6 @@
         this.options.rotationOrigin = this.options.rotationOrigin || iconAnchor || 'center bottom' ;
         this.options.rotationAngle = this.options.rotationAngle || 0;
 
-        // Ensure marker keeps rotated during dragging
         this.on('drag', function(e) { e.target._applyRotation(); });
     });
 
@@ -33,10 +31,8 @@
                 this._icon.style[L.DomUtil.TRANSFORM+'Origin'] = this.options.rotationOrigin;
 
                 if(oldIE) {
-                    // for IE 9, use the 2D rotation
                     this._icon.style[L.DomUtil.TRANSFORM] = 'rotate(' + this.options.rotationAngle + 'deg)';
                 } else {
-                    // for modern browsers, prefer the 3D accelerated version
                     this._icon.style[L.DomUtil.TRANSFORM] += ' rotateZ(' + this.options.rotationAngle + 'deg)';
                 }
             }
