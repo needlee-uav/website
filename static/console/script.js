@@ -114,7 +114,7 @@ function pickTestMode(option) {
 function processDebugData() {
   if (debugData.length > 0) {
     const mobileFontSize = mobile ? `style="font-size: 14px;"` : ""
-    if (debugData[0] == "LOGGER: log OK") {
+    if (debugData[0] == "LOGGER: ready") {
       window.document.getElementById("log-screen").innerHTML = `
       <p ${mobileFontSize} class="log-line">NEEDLEE FLIGHT LOG</p>
       <p ${mobileFontSize} class="log-line">==================</p>
